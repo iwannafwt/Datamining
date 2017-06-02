@@ -362,18 +362,9 @@
       <option name="presentableId" value="Default" />
       <updated>1496177676182</updated>
 
-      <workItem from="1496177686443" duration="931000" />
-      <workItem from="1496178830358" duration="810000" />
-      <workItem from="1496392059579" duration="13027000" />
-    </task>
-    <task id="LOCAL-00001" summary="Div Container added for responsive developing">
-      <created>1496396219544</created>
-      <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL-00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1496396219544</updated>
+      <workItem from="1496177686443" duration="2244000" />
+      <workItem from="1496245403394" duration="2705000" />
 
-    </task>
     <task id="LOCAL-00002" summary="Div Container added for responsive developing">
       <created>1496404879065</created>
       <option name="number" value="00002" />
@@ -386,7 +377,8 @@
   </component>
   <component name="TimeTrackingManager">
 
-    <option name="totallyTimeSpent" value="14768000" />
+    <option name="totallyTimeSpent" value="4949000" />
+
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1378" height="744" extended-state="0" />
@@ -402,6 +394,9 @@
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24921136" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+
+      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.119476266" sideWeight="0.4969743" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
 
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
