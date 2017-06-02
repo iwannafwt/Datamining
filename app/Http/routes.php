@@ -12,5 +12,7 @@
 */
 
 Route::get('/','PagesController@getIndex');
+Route::post('/' , ['as'=>'setdata' , 'uses'=>'DataForProcessingController@setData']);
+
 
 
