@@ -36,4 +36,12 @@
         </form>
     </div>
 
+
+    {{--{!! Form::open(['route' => 'setdata', 'method' => 'POST']) !!}--}}
+    {{--{{ Form::label('name', 'Name:') }}--}}
+    {{--{{ Form::text('name', null, ['class' => 'form-control']) }}--}}
+
+    {{--{{ Form::submit('save tha data', ['class' => 'btn btn-primary btn-block btn-h1-spacing']) }}--}}
+
+    {{--{!! Form::close() !!}--}}
 @endsection
