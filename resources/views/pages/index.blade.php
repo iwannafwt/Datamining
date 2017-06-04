@@ -4,44 +4,27 @@
     <div class="jumbotron">
         <p>Graduation Project </p>
     </div>
-    <div class="row">
-        <form class="form-horizontal">
-            <div class="form-group">
-                <label class="control-label col-sm-2">Choose a DataSet</label>
-                <div class="col-xs-3 selectContainer">
-                    <select class="form-control" name="dataset">
-                        <option value="" hidden=""></option>
-                        <option value="">Dataset1</option>
-                        <option value="s">Dataset2</option>
-                    </select>
-                 </div>
-            </div>
-
-            <div class="form-group">
-                <label class="control-label col-sm-2">Choose an Algorithm</label>
-                <div class="col-xs-3 selectContainer">
-                    <select class="form-control" name="dataset">
-                        <option value="" hidden=""></option>
-                        <option value="">KNN</option>
-                        <option value="s">Decision trees</option>
-                    </select>
+    <div>
+        <div class="form-horizontal">
+            {!! Form::open()!!}
+                <div class="form-group">
+                    {!! Form::label('dataset', 'Choose a DataSet:',array('class'=>'col-xs-3 control-label')) !!}
+                    <div class="col-xs-2 selectContainer">
+                    {!! Form::select('dataset',['dataset1' => 'dataset1', 'dataset2' => 'dataset2'],null,array('class'=>'form-control'))!!}
+                    </div>
                 </div>
-            </div>
-
-            <div class="form-group">
-                <div class="col-xs-5 col-xs-offset-4">
-                    <button type="submit" class="btn btn-default">Run</button>
+                <div class="form-group">
+                    {!! Form::label('algorithm', 'Choose an Algorithm:',array('class'=>'col-xs-3 control-label')) !!}
+                    <div class="col-xs-2 selectContainer">
+                    {!! Form::select('algorithm',['knn' => 'Knn', 'decisionTrees' => 'decision trees'],null,array('class'=>'form-control'))!!}
+                    </div>
                 </div>
-            </div>
-        </form>
+                <div class="form-group">
+                    {!! Form::submit('Run', array('class' => 'btn btn-success  col-xs-offset-4','style'=>'margin-top:20px')) !!}
+                </div>
+
+            {!! Form::close() !!}
+
+        </div>
     </div>
-
-
-    {{--{!! Form::open(['route' => 'setdata', 'method' => 'POST']) !!}--}}
-    {{--{{ Form::label('name', 'Name:') }}--}}
-    {{--{{ Form::text('name', null, ['class' => 'form-control']) }}--}}
-
-    {{--{{ Form::submit('save tha data', ['class' => 'btn btn-primary btn-block btn-h1-spacing']) }}--}}
-
-    {{--{!! Form::close() !!}--}}
 @endsection
