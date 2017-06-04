@@ -1,7 +1,6 @@
 @extends('main')
 @section('content')
     <div class="row">
-
         <div class="jumbotron">
             <p>Graduation Project </p>
         </div>
@@ -28,10 +27,6 @@
                 </div>
             </div>
 
-
-
-
-
         <div class="col">
             <div class="col-lg-4 col-sm-6 text-center">
                 <div class="well">
@@ -39,7 +34,7 @@
                     <ul data-brackets-id="12674" id="sortable" class="list-unstyled ui-sortable">
                         <li class="ui-state-default">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </li>
                     </ul>
-                    <a href="#" class="btn btn-primary btn-sm">Read more</a>
+                    <a href="{{route('knn')}}" class="btn btn-primary btn-sm">Read more</a>
                 </div>
             </div>
         </div>
@@ -50,7 +45,7 @@
                     <ul data-brackets-id="12674" id="sortable" class="list-unstyled ui-sortable">
                         <li class="ui-state-default">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </li>
                     </ul>
-                    <a href="#" class="btn btn-primary btn-sm">Read more</a>
+                    <a href="{{route('decisionTrees')}}" class="btn btn-primary btn-sm">Read more</a>
                 </div>
             </div>
         </div>
@@ -61,7 +56,7 @@
                     <ul data-brackets-id="12674" id="sortable" class="list-unstyled ui-sortable">
                         <li class="ui-state-default">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </li>
                     </ul>
-                    <a href="#" class="btn btn-primary btn-sm">Read more</a>
+                    <a href="{{route('bayes')}}" class="btn btn-primary btn-sm">Read more</a>
                 </div>
             </div>
         </div>
