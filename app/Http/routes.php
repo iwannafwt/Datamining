@@ -11,8 +11,12 @@
 |
 */
 
-Route::get('/','PagesController@getIndex');
+Route::get('/','PagesController@getHomepage');
+Route::get('index',['as'=>'index','uses'=>'PagesController@getIndex']);
 Route::post('/' , ['as'=>'setdata' , 'uses'=>'DataForProcessingController@setData']);
+Route::get('knn',['as'=>'knn','uses'=>'PagesController@getKnn']);
+Route::get('decisionTrees',['as'=>'decisionTrees','uses'=>'PagesController@getDecisionTrees']);
+Route::get('bayes',['as'=>'bayes','uses'=>'PagesController@getBayes']);
 
 
 
