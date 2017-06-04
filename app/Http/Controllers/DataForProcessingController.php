@@ -11,12 +11,14 @@ class DataForProcessingController extends Controller
 {
     public function setData(Request $request) {
 
-        Storage::put('data.txt', $request);
+        Storage::put('dataset.txt', $request->dataset);
+        Storage::put('dataalg.txt', $request->algorithm);
         return view('pages.index');
     }
 
     public function deleteData() {
 
-        Storage::delete('data.txt');
+        Storage::delete('dataset.txt');
+        Storage::delete('dataalg.txt');
     }
 }
