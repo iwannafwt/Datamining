@@ -6,7 +6,7 @@
         </div>
             <div class="col-md-10">
                 <div class="form-horizontal">
-                    {!! Form::open()!!}
+                    {!! Form::open(['route'=>'setdata','method'=>'PUT'])!!}
                         <div class="form-group">
                             {{ Form::label('dataset', 'Choose a DataSet:',array('class'=>'col-xs-3 control-label')) }}
                             <div class="col-xs-2 selectContainer">
