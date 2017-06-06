@@ -259,7 +259,7 @@
     </style>
     <!-------------------- Logo ------------------------------------------------------------------->
     <div class="jumbotron">
-        <p>Graduation Project </p>
+        <img class="img-circle img-responsive" src="{{URL::asset('/Logo/Logo.png')}}" alt="" style=" display: block;margin: auto;width: 40%;">
     </div>
 
     <!-------------------- Form -------------------------------------------------------------------->
@@ -292,7 +292,7 @@
                 <ul class="timeline">
                     <li>
                         <div class="timeline-image">
-                            <img class="img-circle img-responsive" src="{{URL::asset('/algorithmPhotos/bayes.png')}}" alt="">
+                            <img class="img-circle img-responsive" src="{{URL::asset('/algorithmPhotos/Bayes.png')}}" alt="" style=" border-radius: 150%; margin: 6px 0;">
                         </div>
                         <div class="timeline-panel">
                             <div class="timeline-heading">
@@ -309,7 +309,7 @@
                     </li>
                     <li class="timeline-inverted">
                         <div class="timeline-image">
-                            <img class="img-circle img-responsive" src="{{URL::asset('/algorithmPhotos/knn.jpg')}}" alt="">
+                            <img class="img-circle img-responsive" src="{{URL::asset('/algorithmPhotos/KNN.png')}}" alt="">
                         </div>
                         <div class="timeline-panel">
                             <div class="timeline-heading">
@@ -326,7 +326,7 @@
                     </li>
                     <li>
                         <div class="timeline-image">
-                            <img class="img-circle img-responsive" src="{{URL::asset('/algorithmPhotos/decisionTrees.png')}}" alt="">
+                            <img class="img-circle img-responsive" src="{{URL::asset('/algorithmPhotos/DECISIONTREES.png')}}" alt="" style="margin: 20px 0;">
                         </div>
                         <div class="timeline-panel">
                             <div class="timeline-heading">
