@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Dataset1;
+use App\Dataset2;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
@@ -14,8 +16,21 @@ class DataForProcessingController extends Controller
 
         Storage::put('dataset.txt', $request->dataset);
         Storage::put('dataalg.txt', $request->algorithm);
-        Artisan::call('enable-matlab');
+
+        //call console
+//        Artisan::call('enable-matlab');
+
+
+//        if($request->dataset == 'datase1'){
+//            $dataset = Dataset1::all();
+//        }else{
+//            $dataset = Dataset2::all();
+//        }
+
         return view('pages.index');
+//            ->with('dataset' , $request->dataset)
+//            ->with('algorithm' , $request->algorithm)
+//            ->with('data' , $dataset);
     }
 
     public function enableMatlab(){
