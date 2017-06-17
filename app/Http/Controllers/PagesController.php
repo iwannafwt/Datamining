@@ -14,15 +14,27 @@ class PagesController extends Controller
         return view('pages.index');
     }
 
+    public function getAbout(){
+        return view('pages.about');
+    }
+
+    public function getContact(){
+        return view('pages.contact');
+    }
+
     public function getKnn(){
-        return view('algorithms.knn');
+        return view('pages.theory.knn');
     }
 
     public function getDecisionTrees(){
-        return view('algorithms.decisionTrees');
+        return view('pages.theory.decisionTrees');
     }
 
     public function getBayes(){
-        return view('algorithms.bayes');
+        return view('pages.theory.bayes');
+    }
+
+    public function getTheory(){
+        return view('pages.theory.index');
     }
 }
