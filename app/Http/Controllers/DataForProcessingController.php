@@ -12,33 +12,35 @@ use Illuminate\Support\Facades\Storage;
 
 class DataForProcessingController extends Controller
 {
-    public function setData(Request $request) {
-
-        Storage::put('dataset.txt', $request->dataset);
-        Storage::put('dataalg.txt', $request->algorithm);
-
-        //call console
-//        Artisan::call('enable-matlab');
-
-
-//        if($request->dataset == 'datase1'){
-//            $dataset = Dataset1::all();
-//        }else{
-//            $dataset = Dataset2::all();
-//        }
-
+    public function setData(Request $request)
+    {
+        if ($request->algorithm == 'knn') {
+            $data = [$request->dataset, $request->algorithm];
+            return view('pages.forms.form')->with('data', $data);
+        } else {
+            $data = [$request->dataset, $request->algorithm];
+            Storage::put('general.txt', $data);
+        }
         return view('pages.index');
-//            ->with('dataset' , $request->dataset)
-//            ->with('algorithm' , $request->algorithm)
-//            ->with('data' , $dataset);
     }
 
-    public function enableMatlab(){
+    public function storeKnnData(Request $request)
+    {
+        $dataset = $request->dataset;
+        $algorithm = $request->algorithm;
+        $data = [$dataset, $algorithm, $request->k];
+
+        Storage::put('general.txt', $data);
+        return view('pages.index');
+    }
+
+    public function enableMatlab()
+    {
         Artisan::call('enable-matlab');
     }
 
-    public function deleteData() {
-
+    public function deleteData()
+    {
         Storage::delete('dataset.txt');
         Storage::delete('dataalg.txt');
     }

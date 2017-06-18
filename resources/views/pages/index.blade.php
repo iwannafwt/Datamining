@@ -1,6 +1,124 @@
 @extends('main')
 @section('content')
 
+    <!-------------------- Logo ------------------------------------------------------------------->
+    <div class="jumbotron">
+        <img class="img-circle img-responsive" src="{{URL::asset('/Logo/Logo.png')}}" alt=""
+             style=" display: block;margin: auto;width: 40%;">
+    </div>
+    <!-------------------- Form -------------------------------------------------------------------->
+    <div class="form-horizontal">
+        {!! Form::open(['route'=>'setdata','method'=>'PUT'])!!}
+        <div class="form-group">
+            {{ Form::label('dataset', 'Επιλέξτε DataSet:',array('class'=>'col-xs-3 control-label')) }}
+            <div class="col-xs-2 selectContainer">
+                {{ Form::select('dataset',['dataset1' => 'dataset1', 'dataset2' => 'dataset2'],null,array('class'=>'form-control'))}}
+            </div>
+        </div>
+        <div class="form-group">
+            {{ Form::label('algorithm', 'Επιλέξτε αλγόριθμο:',array('class'=>'col-xs-3 control-label')) }}
+            <div class="col-xs-2 selectContainer">
+                {{ Form::select('algorithm',['knn' => 'Knn', 'bayes' => 'Bayes' ,'decisionTrees' => 'Decision trees'],null,array('class'=>'form-control'))}}
+            </div>
+        </div>
+        {{--<div class="form-group">--}}
+        {{--{{ Form::label('trainingSet', 'Επιλέξτε το training Set:',array('class'=>'col-xs-3 control-label')) }}--}}
+        {{--<div class="col-xs-2 selectContainer">--}}
+        {{--{{ Form::select('algorithm',['knn' => 'Knn', 'Bayes' ,'decisionTrees' => 'decision trees'],null,array('class'=>'form-control'))}}--}}
+        {{--</div>--}}
+        {{--</div>--}}
+        <div class="form-group">
+            {{ Form::label('evolutionIndex', 'Επιλέξτε δείκτη απόδοσης:',array('class'=>'col-xs-3 control-label')) }}
+            <div class="col-xs-2 selectContainer">
+                {{ Form::select('evolutionIndex',['accuracy' => 'Αccuracy', 'errorRate' => 'Error Rate' , 'sensitivity' => 'Sensitivity','specificity' => 'Specificity'],null,array('class'=>'form-control'))}}
+            </div>
+        </div>
+        <div class="form-group">
+            {{ Form::submit('Run', array('class' => 'btn btn-success  col-xs-offset-4','style'=>'margin-top:20px')) }}
+        </div>
+        {!! Form::close() !!}
+    </div>
+
+    @yield('knnForm')
+
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <h2 class="text-center">Εξόρυξη γνώσης/Data mining</h2>
+                <div class="row">
+                    <?php
+                    $myfile = fopen("algorithm/Datamining.html", "r") or die("Unable to open file!");
+                    echo fread($myfile, filesize("algorithm/Datamining.html"));
+                    fclose($myfile);
+                    ?>
+                    <a href="{{route('theory')}}" class="btn btn-info" role="button">Διαβάστε περισσότερα</a>
+                </div>
+                <ul class="timeline">
+                    <li>
+                        <div class="timeline-image">
+                            <img class="img-circle img-responsive" src="{{URL::asset('/algorithmPhotos/Bayes.png')}}"
+                                 alt="" style=" border-radius: 150%; margin: 6px 0;">
+                        </div>
+                        <div class="timeline-panel">
+                            <div class="timeline-heading">
+                                <h4>Bayes</h4>
+                                <h4 class="subheading">Θεώρημα Bayes</h4>
+                                <a href="{{route('bayes')}}" class="btn btn-info" role="button">Διαβάστε περισσότερα</a>
+                            </div>
+                            <div class="timeline-body">
+                                <p class="text-muted">
+                                    <embed src="algorithm/bayes.html" width="100%" height="200"></embed>
+                                </p>
+                            </div>
+                        </div>
+                        <div class="line"></div>
+                    </li>
+                    <li class="timeline-inverted">
+                        <div class="timeline-image">
+                            <img class="img-circle img-responsive" src="{{URL::asset('/algorithmPhotos/KNN.png')}}"
+                                 alt="">
+                        </div>
+                        <div class="timeline-panel">
+                            <div class="timeline-heading">
+                                <h4>Knn</h4>
+                                <h4 class="subheading">Αλγόριθμος Κ πλησιέστερων Γειτώνων.</h4>
+                                <a href="{{route('knn')}}" class="btn btn-info" role="button">Διαβάστε περισσότερα</a>
+                            </div>
+                            <div class="timeline-body">
+                                <p class="text-muted">
+                                    <embed src="algorithm/knn.html" width="150%" height="200"></embed>
+                                    <br>
+                                </p>
+                            </div>
+                        </div>
+                        <div class="line"></div>
+                    </li>
+                    <li>
+                        <div class="timeline-image">
+                            <img class="img-circle img-responsive"
+                                 src="{{URL::asset('/algorithmPhotos/DECISIONTREES.png')}}" alt=""
+                                 style="margin: 20px 0;">
+                        </div>
+                        <div class="timeline-panel">
+                            <div class="timeline-heading">
+                                <h4>Decision Trees</h4>
+                                <h4 class="subheading">Δένδρα απόφασης</h4>
+                                <a href="{{route('decisionTrees')}}" class="btn btn-info" role="button">Διαβάστε
+                                    περισσότερα</a>
+                            </div>
+                            <div class="timeline-body">
+                                <p class="text-muted">
+                                    <embed src="algorithm/decisionTrees.html" width="100%" height="200"></embed>
+                                </p>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    </div>
+
     <style>
         .timeline {
             position: relative;
@@ -281,121 +399,6 @@
             }
         }
     </style>
-    <!-------------------- Logo ------------------------------------------------------------------->
-    <div class="jumbotron">
-        <img class="img-circle img-responsive" src="{{URL::asset('/Logo/Logo.png')}}" alt=""
-             style=" display: block;margin: auto;width: 40%;">
-    </div>
 
-    <!-------------------- Form -------------------------------------------------------------------->
-    <div class="form-horizontal">
-        {!! Form::open(['route'=>'setdata','method'=>'PUT'])!!}
-        <div class="form-group">
-            {{ Form::label('dataset', 'Επιλέξτε DataSet:',array('class'=>'col-xs-3 control-label')) }}
-            <div class="col-xs-2 selectContainer">
-                {{ Form::select('dataset',['dataset1' => 'dataset1', 'dataset2' => 'dataset2'],null,array('class'=>'form-control'))}}
-            </div>
-        </div>
-        <div class="form-group">
-            {{ Form::label('algorithm', 'Επιλέξτε αλγόριθμο:',array('class'=>'col-xs-3 control-label')) }}
-            <div class="col-xs-2 selectContainer">
-                {{ Form::select('algorithm',['knn' => 'Knn', 'bayes' => 'Bayes' ,'decisionTrees' => 'Decision trees'],null,array('class'=>'form-control'))}}
-            </div>
-        </div>
-        {{--<div class="form-group">--}}
-            {{--{{ Form::label('trainingSet', 'Επιλέξτε το training Set:',array('class'=>'col-xs-3 control-label')) }}--}}
-            {{--<div class="col-xs-2 selectContainer">--}}
-                {{--{{ Form::select('algorithm',['knn' => 'Knn', 'Bayes' ,'decisionTrees' => 'decision trees'],null,array('class'=>'form-control'))}}--}}
-            {{--</div>--}}
-        {{--</div>--}}
-        <div class="form-group">
-            {{ Form::label('evolutionIndex', 'Επιλέξτε δείκτη απόδοσης:',array('class'=>'col-xs-3 control-label')) }}
-            <div class="col-xs-2 selectContainer">
-                {{ Form::select('evolutionIndex',['accuracy' => 'Αccuracy', 'errorRate' => 'Error Rate' , 'sensitivity' => 'Sensitivity','specificity' => 'Specificity'],null,array('class'=>'form-control'))}}
-            </div>
-        </div>
-        <div class="form-group">
-            {{ Form::submit('Run', array('class' => 'btn btn-success  col-xs-offset-4','style'=>'margin-top:20px')) }}
-        </div>
 
-        {!! Form::close() !!}
-    </div>
-
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-12">
-                <h2 class="text-center">Data mining</h2>
-                <div class="row">
-                    <embed src="algorithm/whatisdatamining.txt" width="100%" height="300"></embed>
-                    <a href="https://en.wikipedia.org/wiki/Data_mining"
-                       class="btn btn-info" role="button">Link Button</a>
-                </div>
-                <ul class="timeline">
-                    <li>
-                        <div class="timeline-image">
-                            <img class="img-circle img-responsive" src="{{URL::asset('/algorithmPhotos/Bayes.png')}}"
-                                 alt="" style=" border-radius: 150%; margin: 6px 0;">
-                        </div>
-                        <div class="timeline-panel">
-                            <div class="timeline-heading">
-                                <h4>Bates</h4>
-                                <h4 class="subheading">What is Bayes</h4>
-                            </div>
-                            <div class="timeline-body">
-                                <p class="text-muted">
-                                    <embed src="algorithm/bayes.txt" width="" height=""></embed>
-                                    <br>
-                                    <a href="https://translate.google.gr/translate?hl=el&sl=en&u=https://en.wikipedia.org/wiki/Naive_Bayes_classifier&prev=search"
-                                       class="btn btn-info" role="button">Read More</a>
-                                </p>
-                            </div>
-                        </div>
-                        <div class="line"></div>
-                    </li>
-                    <li class="timeline-inverted">
-                        <div class="timeline-image">
-                            <img class="img-circle img-responsive" src="{{URL::asset('/algorithmPhotos/KNN.png')}}"
-                                 alt="">
-                        </div>
-                        <div class="timeline-panel">
-                            <div class="timeline-heading">
-                                <h4>Knn</h4>
-                                <h4 class="subheading">What is Knn</h4>
-                            </div>
-                            <div class="timeline-body">
-                                <p class="text-muted">
-                                    <embed src="algorithm/knn.txt" width="" height=""></embed>
-                                    <br>
-                                    <a href="https://en.wikipedia.org/wiki/K-nearest_neighbors_algorithm"
-                                       class="btn btn-info" role="button">Read More</a>
-                                </p>
-                            </div>
-                        </div>
-                        <div class="line"></div>
-                    </li>
-                    <li>
-                        <div class="timeline-image">
-                            <img class="img-circle img-responsive"
-                                 src="{{URL::asset('/algorithmPhotos/DECISIONTREES.png')}}" alt=""
-                                 style="margin: 20px 0;">
-                        </div>
-                        <div class="timeline-panel">
-                            <div class="timeline-heading">
-                                <h4>Decision Trees</h4>
-                                <h4 class="subheading">What is Decision Trees</h4>
-                            </div>
-                            <div class="timeline-body">
-                                <p class="text-muted">
-                                    <embed src="algorithm/decisiontrees.txt" width="" height=""></embed>
-                                    <br>
-                                    <a href="https://en.wikipedia.org/wiki/Decision_tree"
-                                       class="btn btn-info" role="button">Read More</a>
-                                </p>
-                            </div>
-                        </div>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </div>
 @endsection
