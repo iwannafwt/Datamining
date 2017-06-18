@@ -22,7 +22,7 @@
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-sidebar-navbar-collapse-1">
                 <ul class="nav navbar-nav">
-                    <li class="active"><a href="{{route('knn')}}">Αλγόρυθος Κ πλησιέστερων Γειτώνων.</a></li>
+                    <li class="active"><a href="{{route('knn')}}">Αλγόριθμος Κ πλησιέστερων Γειτώνων.</a></li>
                     <li class="active"><a href="{{route('decisionTrees')}}">Δένδρα απόφασης</a></li>
                     <li class="active"><a href="{{route('bayes')}}">Θεώρημα Bayes</a></li>
 

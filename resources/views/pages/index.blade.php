@@ -6,7 +6,6 @@
         <img class="img-circle img-responsive" src="{{URL::asset('/Logo/Logo.png')}}" alt=""
              style=" display: block;margin: auto;width: 40%;">
     </div>
-
     <!-------------------- Form -------------------------------------------------------------------->
     <div class="form-horizontal">
         {!! Form::open(['route'=>'setdata','method'=>'PUT'])!!}
@@ -39,6 +38,8 @@
         </div>
         {!! Form::close() !!}
     </div>
+
+    @yield('knnForm')
 
     <div class="container">
         <div class="row">
@@ -80,7 +81,7 @@
                         <div class="timeline-panel">
                             <div class="timeline-heading">
                                 <h4>Knn</h4>
-                                <h4 class="subheading">Αλγόρυθος Κ πλησιέστερων Γειτώνων.</h4>
+                                <h4 class="subheading">Αλγόριθμος Κ πλησιέστερων Γειτώνων.</h4>
                                 <a href="{{route('knn')}}" class="btn btn-info" role="button">Διαβάστε περισσότερα</a>
                             </div>
                             <div class="timeline-body">
