@@ -39,6 +39,7 @@
                             <i class="fa fa-facebook"></i>
                         </a>
                     </div>
+                    <a href="{{route('cvm')}}" >Διαβάστε περισσότερα</a>
                 </div>
             </div>
 
@@ -71,6 +72,7 @@
                             <i class="fa fa-facebook"></i>
                         </a>
                     </div>
+                    <a href="{{route('cvi')}}" >Διαβάστε περισσότερα</a>
                 </div>
             </div>
         </div>
