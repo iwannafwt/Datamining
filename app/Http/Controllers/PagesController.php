@@ -22,6 +22,14 @@ class PagesController extends Controller
         return view('pages.contact');
     }
 
+    public function getCvi(){
+        return view('pages.cv.cvi');
+    }
+
+    public function getCvm(){
+        return view('pages.cv.cvm');
+    }
+
     public function getKnn(){
         return view('pages.theory.knn');
     }

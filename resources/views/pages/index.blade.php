@@ -34,7 +34,7 @@
             </div>
         </div>
         <div class="form-group">
-            {{ Form::submit('Run', array('class' => 'btn btn-success  col-xs-offset-4','style'=>'margin-top:20px')) }}
+            {{ Form::submit('Εκτέλεση', array('class' => 'btn btn-success  col-xs-offset-4','style'=>'margin-top:20px')) }}
         </div>
         {!! Form::close() !!}
     </div>

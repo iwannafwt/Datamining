@@ -19,6 +19,8 @@ Route::put('form' , ['as'=>'storeknndata' , 'uses'=>'DataForProcessingController
 /*contact routes*/
 Route::get('about' , ['as'=>'about' , 'uses'=>'PagesController@getAbout']);
 Route::get('contact' , ['as'=>'contact' , 'uses'=>'PagesController@getContact']);
+Route::get('cvi' , ['as'=>'cvi' , 'uses'=>'PagesController@getCvi']);
+Route::get('cvm' , ['as'=>'cvm' , 'uses'=>'PagesController@getCvm']);
 /*Algorithms routes*/
 Route::get('knn',['as'=>'knn','uses'=>'PagesController@getKnn']);
 Route::get('decisionTrees',['as'=>'decisionTrees','uses'=>'PagesController@getDecisionTrees']);
