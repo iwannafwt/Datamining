@@ -11,7 +11,11 @@ class PagesController extends Controller
     }
 
     public function getIndex(){
-        return view('pages.index');
+        return view('pages.index.otherIndex');
+    }
+
+    public function getDataConfirmation(){
+        return view('pages.dataConfirmation.dataConfirmation');
     }
 
     public function getAbout(){

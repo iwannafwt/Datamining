@@ -15,28 +15,39 @@ class DataForProcessingController extends Controller
     public function setData(Request $request)
     {
         if ($request->algorithm == 'knn') {
-            $data = [$request->dataset, $request->algorithm];
-            return view('pages.forms.form')->with('data', $data);
+            $dataset = $request->dataset;
+            $algorithm = $request->algorithm;
+            $trainingSet = $request->trainingSet;
+            $evolutionIndex = $request->evolutionIndex;
+            return view('pages.index.knnIndex')->with('dataset', $dataset)
+                                                    ->with('algorithm' , $algorithm)
+                                                    ->with('trainingSet' ,$trainingSet )
+                                                    ->with('evolutionIndex' , $evolutionIndex);
         } else {
-            $data = [$request->dataset, $request->algorithm];
-            Storage::put('general.txt', $data);
+            $this->storeKnnData($request);
+            return view('pages.dataConfirmation.dataConfirmation')->with('dataset', $request->dataset)
+                                                                        ->with('algorithm' , $request->algorithm)
+                                                                        ->with('trainingSet' ,$request->trainingSet )
+                                                                        ->with('evolutionIndex' , $request->evolutionIndex)
+                                                                        ->with('k' , $request->k=0);
         }
-        return view('pages.index');
     }
 
     public function storeKnnData(Request $request)
     {
         $dataset = $request->dataset;
         $algorithm = $request->algorithm;
-        $data = [$dataset, $algorithm, $request->k];
+        $trainingSet = $request->trainingSet;
+        $evolutionIndex = $request->evolutionIndex;
+        $k = $request->k;
+        $data = [$dataset, " ", $algorithm, " ", $trainingSet, " ", $evolutionIndex, " ", $k];
 
         Storage::put('general.txt', $data);
-        return view('pages.index');
-    }
-
-    public function enableMatlab()
-    {
-        Artisan::call('enable-matlab');
+        return view('pages.dataConfirmation.dataConfirmation')->with('dataset', $dataset)
+                                                                    ->with('algorithm' , $algorithm)
+                                                                    ->with('trainingSet' ,$trainingSet )
+                                                                    ->with('evolutionIndex' , $evolutionIndex)
+                                                                    ->with('k' , $k);
     }
 
     public function deleteData()
