@@ -27,6 +27,8 @@ Route::get('knn',['as'=>'knn','uses'=>'PagesController@getKnn']);
 Route::get('decisionTrees',['as'=>'decisionTrees','uses'=>'PagesController@getDecisionTrees']);
 Route::get('bayes',['as'=>'bayes','uses'=>'PagesController@getBayes']);
 Route::get('theory',['as'=>'theory','uses'=>'PagesController@getTheory']);
+/*Enable Matlab */
+Route::put('enable' , ['as'=>'enableMatlab' , 'uses'=>'EnableMatlabController@enableMatlab']);
 
 
 

@@ -25,6 +25,11 @@ class DataForProcessingController extends Controller
                                                     ->with('evolutionIndex' , $evolutionIndex);
         } else {
             $this->storeKnnData($request);
+            return view('pages.dataConfirmation.dataConfirmation')->with('dataset', $request->dataset)
+                                                                        ->with('algorithm' , $request->algorithm)
+                                                                        ->with('trainingSet' ,$request->trainingSet )
+                                                                        ->with('evolutionIndex' , $request->evolutionIndex)
+                                                                        ->with('k' , $request->k=0);
         }
     }
 
@@ -38,12 +43,11 @@ class DataForProcessingController extends Controller
         $data = [$dataset, " ", $algorithm, " ", $trainingSet, " ", $evolutionIndex, " ", $k];
 
         Storage::put('general.txt', $data);
-        return view('pages.index.otherIndex');
-    }
-
-    public function enableMatlab()
-    {
-        Artisan::call('enable-matlab');
+        return view('pages.dataConfirmation.dataConfirmation')->with('dataset', $dataset)
+                                                                    ->with('algorithm' , $algorithm)
+                                                                    ->with('trainingSet' ,$trainingSet )
+                                                                    ->with('evolutionIndex' , $evolutionIndex)
+                                                                    ->with('k' , $k);
     }
 
     public function deleteData()

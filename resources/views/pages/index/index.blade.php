@@ -10,9 +10,6 @@
     <div class="form-horizontal">
         @yield('form')
     </div>
-
-    @yield('knnForm')
-
     <div class="container">
         <div class="row">
             <div class="col-lg-12">
