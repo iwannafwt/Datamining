@@ -1,11 +1,5 @@
 @extends('main')
 @section('content')
-
-    <!-------------------- Logo ------------------------------------------------------------------->
-    <div class="jumbotron">
-        <img class="img-circle img-responsive" src="{{URL::asset('/Logo/Logo.png')}}" alt=""
-             style=" display: block;margin: auto;width: 40%;">
-    </div>
     <!-------------------- Form -------------------------------------------------------------------->
     <div class="form-horizontal">
         @yield('form')

@@ -2,10 +2,6 @@
 @section('content')
 
     <!-------------------- Logo ------------------------------------------------------------------->
-    <div class="jumbotron">
-        <img class="img-circle img-responsive" src="{{URL::asset('/Logo/Logo.png')}}" alt=""
-             style=" display: block;margin: auto;width: 40%;">
-    </div>
     <!-------------------- Form -------------------------------------------------------------------->
     <nav class="navbar navbar-inverse sidebar" role="navigation">
         <div class="container-fluid">
