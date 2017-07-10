@@ -1,7 +1,5 @@
 @extends('main')
-<br><br><br>
-<div class="container">
-    <div class="row">
+@section('content')
         <div class="box">
             <div class="info">
                 <h4 class="text-center">Οι επιλογές που έχετε κάνει</h4>
@@ -43,9 +41,6 @@
                 </table>
             </div>
         </div>
-    </div>
-</div>
-
 
 <style>
     @import url(//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css);
@@ -108,3 +103,5 @@
         transition: all 0.5s ease 0s;
     }
 </style>
+
+    @endsection
