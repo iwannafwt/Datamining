@@ -1,3 +1,2 @@
-
-    <img class="img-circle img-responsive" src="{{URL::asset('/Logo/Logo.png')}}" alt=""
-     style="float: left;width: 40%;">
+<br><br>
+ <h1><img src="{{URL::asset('/Logo/Logo.png')}}" ></h1>
