@@ -11,8 +11,7 @@
         <span class="wrap"></span>
     </a>
 </h1>
-<p>Milion</p>
-<a href="{{route('index')}}" class="btn btn-primary btn-sm">Continue</a>
+<a href="{{route('index')}}" class="btn btn-primary btn-sm">Συνέχεια</a>
 
 <style>
     p {
