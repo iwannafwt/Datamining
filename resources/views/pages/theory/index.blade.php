@@ -1,4 +1,4 @@
 @extends('pages.theory.navbar')
 @section('theory')
-    <embed src="algorithm/theory/Datamining.html" width="100%" height="700"></embed>
+    <embed src="algorithm/theory/Datamining.html" width="70%" height="450"></embed>
 @endsection
