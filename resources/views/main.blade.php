@@ -17,9 +17,16 @@
             </div>
 
         </div><!-- end of container -->
-        <div class="row">
             @include('partials._footer')
-        </div>
-        @include('partials._scripts')
+            @include('partials._scripts')
     </body>
+
+    <style>
+        html {
+            position: relative;
+            min-height: 100%;
+        }
+    </style>
 </html>
+
+

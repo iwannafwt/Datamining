@@ -8,7 +8,7 @@
     </div>
 </div>
 <div class="form-group">
-    {{ Form::label('algorithm', 'Επιλέξτε Αλγόρυθμο:',array('class'=>'col-xs-3 control-label')) }}
+    {{ Form::label('algorithm', 'Επιλέξτε Αλγόριθμο:',array('class'=>'col-xs-3 control-label')) }}
     <div class="col-xs-2 selectContainer">
         {{ Form::select('algorithm',['knn' => 'knn', 'Bayes' => 'bayes'],null,array('class'=>'form-control'))}}
     </div>

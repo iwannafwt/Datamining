@@ -1,12 +1,19 @@
-
-<p id="footer" class="text-center">Copyright Milion - All Rights Reserved</p>
+<footer class="footer">
+    <div class="container">
+        <p class="text-center text-muted">Copyright Milion - All Rights Reserved</p>
+    </div>
+</footer>
 
 <style>
-    #footer {
+    .footer{
         position: absolute;
         bottom: 0;
         width: 100%;
-        height: 25px; /* Height of the footer */
+        /* Set the fixed height of the footer here */
+        height: 25px;
+        background-color: black;
     }
-
+    .container .text-muted {
+        margin: 0 0;
+    }
 </style>
