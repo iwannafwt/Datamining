@@ -7,10 +7,10 @@
 <style>
     .footer{
         position: absolute;
-        bottom: 0;
+        bottom: -20px;
         width: 100%;
         /* Set the fixed height of the footer here */
-        height: 25px;
+        height: 20px;
         background-color: black;
     }
     .container .text-muted {

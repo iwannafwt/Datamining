@@ -20,8 +20,8 @@
                             <p>Αζωίδου Μιλένα</π>
                         </div>
                         <div class="desc">Web Developer</div>
-                        <div class="desc">email</div>
-                        <div class="desc">til</div>
+                        <div class="desc">milena.14@windowslive.com</div>
+                        <div class="desc">6977155214</div>
                     </div>
                     <div class="bottom">
                         <a class="btn btn-primary btn-twitter btn-sm" href="https://twitter.com/webmaniac">
