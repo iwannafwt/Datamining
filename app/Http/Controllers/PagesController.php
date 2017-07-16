@@ -33,20 +33,4 @@ class PagesController extends Controller
     public function getCvm(){
         return view('pages.cv.cvm');
     }
-
-    public function getKnn(){
-        return view('pages.theory.knn');
-    }
-
-    public function getDecisionTrees(){
-        return view('pages.theory.decisionTrees');
-    }
-
-    public function getBayes(){
-        return view('pages.theory.bayes');
-    }
-
-    public function getTheory(){
-        return view('pages.theory.index');
-    }
 }
