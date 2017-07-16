@@ -9,7 +9,7 @@
                     <td>{{$dataset}}</td>
                 </tr>
                 <tr>
-                    <td>Αλγόρυθμος :</td>
+                    <td>Αλγόριθμος :</td>
                     <td>{{$algorithm}}</td>
                 </tr>
                 <tr>
@@ -23,7 +23,7 @@
 
                 </tbody>
             </table>
-                <td><a href="{{route('index')}}" class="btn btn-primary" role="button">Πηγέναιτε πίσω για τα αλλάξετε τα δεδομένα</a> :</td>
+                <td><a href="{{route('index')}}" class="btn btn-primary" role="button">Πηγαίνετε πίσω για τα αλλάξετε τα δεδομένα</a> :</td>
           </div>
         <div class="col-md-8">
             {!! Form::open(['route'=>'storeknndata','method'=>'PUT' ])!!}
@@ -31,7 +31,7 @@
             <input type="hidden" name="algorithm" value="{{ $algorithm }}">
             <input type="hidden" name="trainingSet" value="{{ $trainingSet }}">
             <input type="hidden" name="evolutionIndex" value="{{ $evolutionIndex }}">
-            <p>Έχετε επιλέξει τον αλγόρυθμο KNN . Ο αλγόριθμος KNN απετεί την παράμετρο Κ.</p>
+            <p>Έχετε επιλέξει τον αλγόριθμο KNN . Ο αλγόριθμος KNN απαιτεί την παράμετρο Κ.</p>
             <hr>
             <div class="form-group">
                 {{ Form::label('k', 'Επιλέξτε την παράμετρο Κ:',array('class'=>'col-xs-4 control-label')) }}
