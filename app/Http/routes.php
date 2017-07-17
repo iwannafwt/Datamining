@@ -15,7 +15,6 @@ Route::get('/','PagesController@getHomepage');
 Route::get('index',['as'=>'index','uses'=>'PagesController@getIndex']);
 /*Forms routes*/
 Route::put('index' , ['as'=>'setdata' , 'uses'=>'DataForProcessingController@setData']);
-Route::put('form' , ['as'=>'storeknndata' , 'uses'=>'DataForProcessingController@storeKnnData']);
 /*contact routes*/
 Route::get('confirm' , ['as'=>'dataConfirmation' , 'uses'=>'PagesController@getDataConfirmation']);
 Route::get('about' , ['as'=>'about' , 'uses'=>'PagesController@getAbout']);
