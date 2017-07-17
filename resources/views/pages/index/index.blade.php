@@ -30,6 +30,7 @@
               <div class="col-xs-3 selectContainer">
                   <select class="form-control" name="k">
                       <option selected disabled hidden>Επέλεξε την παραμετρο Κ..</option>
+                      <option value="" hidden></option>
                       <option value="k1">k1</option>
                       <option value="k2">k2</option>
                   </select>
