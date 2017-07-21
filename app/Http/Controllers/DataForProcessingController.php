@@ -14,6 +14,14 @@ class DataForProcessingController extends Controller
 {
     public function setData(Request $request)
     {
+        $this -> validate($request,array(
+            'dataset' => 'required',
+            'algorithm' => 'required',
+            'k' =>'required_if:algorithm,knn',
+            'trainingSet' => 'required',
+            'evolutionIndex' => 'required'
+        ));
+
         $dataset = $request->dataset;
         $algorithm = $request->algorithm;
         $trainingSet = $request->trainingSet;
@@ -37,4 +45,5 @@ class DataForProcessingController extends Controller
     public function deleteData()
     {
     }
+
 }
