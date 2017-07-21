@@ -1,14 +1,17 @@
 @extends('main')
+@section('stylesheets')
+    {!! Html::style('css/parsley.css') !!}
+@endsection
 @section('content')
     <!-------------------- Form -------------------------------------------------------------------->
   <div class="form-horizontal">
-      <form action="{{ route('setdata') }}" method="POST">
+      <form action="{{ route('setdata') }}" method="POST" data-parsley-validate>
           <input type="hidden" name="_method" value="PUT">
           <input type="hidden" name="_token" value="{{ csrf_token() }}">
           <div class="form-group">
-              <label class="col-xs-3 control-label">Επιλέξτε DataSet:</label>
+              <label class="col-xs-3 control-label">*Επιλέξτε DataSet:</label>
               <div class="col-xs-3 selectContainer">
-                  <select class="form-control" name="dataset">
+                  <select class="form-control" name="dataset" id="firstname" required>
                       <option selected disabled hidden>Επέλεξε Dataset..</option>
                       <option value="dataset1">dataset1</option>
                       <option value="dataset2">dataset2</option>
@@ -16,9 +19,9 @@
               </div>
           </div>
           <div class="form-group">
-              <label class="col-xs-3 control-label">Επιλέξτε Αλγόριθμο:</label>
+              <label class="col-xs-3 control-label">*Επιλέξτε Αλγόριθμο:</label>
               <div class="col-xs-3 selectContainer">
-                  <select class="form-control" name="algorithm" id="mySelect" onchange='on_change(this)'>
+                  <select class="form-control" name="algorithm" id="mySelect" onchange='on_change(this)' required>
                       <option selected disabled hidden>Επέλεξε Αλγόριθμο..</option>
                       <option value="knn">knn</option>
                       <option value="bayes">bayes</option>
@@ -26,9 +29,9 @@
               </div>
           </div>
           <div class="form-group" id="showKnn" style="display:none;">
-              <label class="col-xs-3 control-label"> Επιλέξτε την παράμετρο Κ:</label>
+              <label class="col-xs-3 control-label">*Επιλέξτε την παράμετρο Κ:</label>
               <div class="col-xs-3 selectContainer">
-                  <select class="form-control" name="k">
+                  <select class="form-control" name="k" required>
                       <option selected disabled hidden>Επέλεξε την παραμετρο Κ..</option>
                       <option value="" hidden></option>
                       <option value="k1">k1</option>
@@ -37,9 +40,9 @@
               </div>
           </div>
           <div class="form-group">
-              <label class="col-xs-3 control-label">Επιλέξτε το training Set:</label>
+              <label class="col-xs-3 control-label">*Επιλέξτε το training Set:</label>
               <div class="col-xs-3 selectContainer">
-                  <select class="form-control" name="trainingSet">
+                  <select class="form-control" name="trainingSet" required>
                       <option selected disabled hidden>Επέλεξε το training Set..</option>
                       <option value="tr1">tr1</option>
                       <option value="tr2">tr2</option>
@@ -47,9 +50,9 @@
               </div>
           </div>
           <div class="form-group">
-              <label class="col-xs-3 control-label"> Επιλέξτε δείκτη απόδοσης:</label>
+              <label class="col-xs-3 control-label">*Επιλέξτε δείκτη απόδοσης:</label>
               <div class="col-xs-3 selectContainer">
-                  <select  class="form-control" name="evolutionIndex">
+                  <select  class="form-control" name="evolutionIndex" required>
                       <option selected disabled hidden>Επέλεξε τον δείκτη απόδοσης..</option>
                       <option value="accuracy">accuracy</option>
                       <option value="errorRate">errorRate</option>
@@ -59,7 +62,7 @@
               </div>
           </div>
           <div class="form-group">
-              <button type="submit" class="btn btn-success  col-xs-offset-5" style="margin-top:10px">Submit</button>
+              <button type="submit" class="btn btn-success  col-xs-offset-5" style="margin-top:10px">Συνέχεια</button>
           </div>
       </form>
 
@@ -74,3 +77,7 @@
       </script>
     </div>
 @endsection
+@section('scripts')
+    {!! Html::script('js/parsley.min.js') !!}
+@endsection
+
