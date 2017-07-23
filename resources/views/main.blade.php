@@ -4,7 +4,6 @@
         @include('partials._head')
     </head>
     <body>
-
         <div class="container">
             <div class="row">
             @include('partials._logo')
@@ -27,6 +26,8 @@
             position: relative;
             min-height: 100%;
         }
+        body{
+            font-family: 'Ubuntu', sans-serif;}
     </style>
 </html>
 
