@@ -26,4 +26,3 @@ Route::put('enable' , ['as'=>'enableMatlab' , 'uses'=>'EnableMatlabController@en
 /*Algorithms routes for theory*/
 Route::resource('theory','TheoryController');
 
-

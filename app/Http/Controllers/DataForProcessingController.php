@@ -17,7 +17,7 @@ class DataForProcessingController extends Controller
         $this -> validate($request,array(
             'dataset' => 'required',
             'algorithm' => 'required',
-            'k' =>'required_if:algorithm,knn',
+            'k' =>'requiredif:algorithm,knn',
             'trainingSet' => 'required',
             'evolutionIndex' => 'required'
         ));
