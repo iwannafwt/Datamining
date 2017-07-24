@@ -49,7 +49,8 @@ class datasetController extends Controller
      */
     public function show($id)
     {
-        //
+        $dataset = dataset::find($id);
+        return view('pages.dataset.show')->with('dataset' , $dataset);
     }
 
     /**
