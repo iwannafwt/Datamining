@@ -69,6 +69,8 @@
                 </form>
             </div>
         </div>
+        @yield('dataset')
+    </div>
 @endsection
 @section('scripts')
     {!! Html::script('js/sweetalert.min.js') !!}
