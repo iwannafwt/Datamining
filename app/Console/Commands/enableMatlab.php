@@ -38,6 +38,7 @@ class enableMatlab extends Command
      */
     public function handle()
     {
-        exec('C:\projects\Datamining\storage\app\matlab.bat');
+//        exec('C:\projects\Datamining\storage\app\matlab.bat');
+        exec('C:\Users\ioanna\Documents\Project\Datamining\storage\app\matlab.bat');
     }
 }
