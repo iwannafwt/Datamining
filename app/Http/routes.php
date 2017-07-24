@@ -25,4 +25,5 @@ Route::get('cvm' , ['as'=>'cvm' , 'uses'=>'PagesController@getCvm']);
 Route::put('enable' , ['as'=>'enableMatlab' , 'uses'=>'EnableMatlabController@enableMatlab']);
 /*Algorithms routes for theory*/
 Route::resource('theory','TheoryController');
+Route::resource('dataset','DatasetController');
 

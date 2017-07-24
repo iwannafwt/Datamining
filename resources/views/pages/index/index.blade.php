@@ -71,10 +71,26 @@
                 </form>
             </div>
         </div>
-        <div class="col-xm-3">
-           @include('pages.index.datasetTable')
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3">
+                    <div class="panel panel-default">
+                        <div class="panel-body">
+                            <form action="{{route('dataset.index')}}" method="get">
+                                <button type="submit" onclick="hide();" id="button">Διαθέσιμα datasets</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
+        @yield('dataset')
     </div>
+    <script>
+        function hide() {
+            document.getElementById('button').style.display = 'none'; // Hide el
+        }
+    </script>
     <script>
         function on_change(el) {
             if (el.options[el.selectedIndex].value == 'knn') {
