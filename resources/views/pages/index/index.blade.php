@@ -1,11 +1,9 @@
 @extends('main')
 @section('stylesheets')
-    {!! Html::style('css/parsley.css') !!}
     {!! Html::style('css/sweetalert.css') !!}
 @endsection
 @section('content')
     <!-------------------- Form -------------------------------------------------------------------->
-    <div class="row">
          <div class="col-xs-8">
             <div class="form-horizontal">
                 <form action="{{ route('setdata') }}" method="POST" id="form">
@@ -24,7 +22,7 @@
                     <div class="form-group">
                         <label class="col-xs-3 control-label">*Επιλέξτε Αλγόριθμο:</label>
                         <div class="col-xs-4 selectContainer">
-                            <select class="form-control" name="algorithm" onchange="on_change(this)">
+                            <select class="form-control" name="algorithm" onchange="showKnn(this)">
                                 <option selected disabled hidden>Επέλεξε Αλγόριθμο..</option>
                                 <option value="knn">knn</option>
                                 <option value="bayes">bayes</option>
@@ -71,6 +69,7 @@
                 </form>
             </div>
         </div>
+<<<<<<< HEAD
         @yield('dataset')
     </div>
     <script>
@@ -106,10 +105,13 @@
     </script>
 
 
+=======
+>>>>>>> d621ff1f9cec18d1141e3f62a7141634696e92a1
 @endsection
 @section('scripts')
-    {!! Html::script('js/parsley.min.js') !!}
     {!! Html::script('js/sweetalert.min.js') !!}
+    {!! Html::script('js/indexDialogBox.js') !!}
+    {!! Html::script('js/showKnn.js') !!}
 @endsection
 
 
