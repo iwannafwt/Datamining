@@ -11,7 +11,7 @@ class PagesController extends Controller
     }
 
     public function getIndex(){
-        return view('pages.index.index');
+        return view('pages.index.datasetTable');
     }
 
     public function getDataConfirmation(){

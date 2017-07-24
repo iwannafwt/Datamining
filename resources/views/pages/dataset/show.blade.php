@@ -5,13 +5,7 @@
             <div class="col-md-3">
                 <div class="panel panel-default">
                     <div class="panel-body">
-                            @foreach($dataset as $datasets)
-                                {{--<input type="checkbox" name="iris" value="Iris">{{$datasets->name}}<br>--}}
-                            <a id="listLI" href="{{route('dataset.show' , $datasets->id)}}">{{$datasets->name}}</a>
-
-                            @endforeach
-                            <br>
-
+                        <embed src="{{asset($dataset->location)}}" width="70%" height="600"></embed>
                     </div>
                 </div>
             </div>
