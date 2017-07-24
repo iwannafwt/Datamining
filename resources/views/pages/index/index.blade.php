@@ -69,44 +69,8 @@
                 </form>
             </div>
         </div>
-<<<<<<< HEAD
         @yield('dataset')
     </div>
-    <script>
-        function on_change(el) {
-            if (el.options[el.selectedIndex].value == 'knn') {
-                document.getElementById('showKnn').style.display = 'block'; // Show el
-            } else {
-                document.getElementById('showKnn').style.display = 'none'; // Hide el
-            }
-        }
-    </script>
-
-    <script>
-        document.querySelector('#form').addEventListener('submit', function (e) {
-            var form = this;
-            e.preventDefault();
-            swal({
-                title: "Είστε σίγουροι?",
-                showCancelButton: true,
-                confirmButtonColor: '#449d44',
-                cancelButtonColor: '#286090',
-                confirmButtonText: 'Συνέχεια',
-                cancelButtonText: "Επιστροφή",
-                closeOnConfirm: false,
-                closeOnCancel: true,
-                allowEscapeKey: true
-            }, function (isConfirm) {
-                if (isConfirm) {
-                    document.getElementById("form").submit();
-                }
-            })
-        });
-    </script>
-
-
-=======
->>>>>>> d621ff1f9cec18d1141e3f62a7141634696e92a1
 @endsection
 @section('scripts')
     {!! Html::script('js/sweetalert.min.js') !!}
