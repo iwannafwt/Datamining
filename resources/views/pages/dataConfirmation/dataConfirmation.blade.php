@@ -33,6 +33,11 @@
                         </td>
                         <td>
                             {!! Form::open(['route'=>['enableMatlab'] , 'method'=>'PUT']) !!}
+                            {{ Form::hidden('dataset', $dataset) }}
+                            {{ Form::hidden('algorithm', $algorithm) }}
+                            {{ Form::hidden('k', $k) }}
+                            {{ Form::hidden('trainingset', $trainingSet) }}
+                            {{ Form::hidden('evolutionindex', $evolutionIndex) }}
                             {!! Form::submit('Επεξεργασία αποτελεσμάτων' , ['class' => 'btn btn-success btn-block']) !!}
                             {!! Form::close() !!}
                         </td>

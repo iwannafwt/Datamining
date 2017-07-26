@@ -22,7 +22,7 @@ Route::get('contact' , ['as'=>'contact' , 'uses'=>'PagesController@getContact'])
 Route::get('cvi' , ['as'=>'cvi' , 'uses'=>'PagesController@getCvi']);
 Route::get('cvm' , ['as'=>'cvm' , 'uses'=>'PagesController@getCvm']);
 /*Enable Matlab */
-Route::put('enable' , ['as'=>'enableMatlab' , 'uses'=>'EnableMatlabController@enableMatlab']);
+Route::put('enable' , ['as'=>'enableMatlab' , 'uses'=>'EnableMatlabController@enableMatlabForUpdate']);
 /*Algorithms routes for theory*/
 Route::resource('theory','TheoryController');
 Route::resource('dataset','DatasetController');
