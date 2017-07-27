@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 
 use Illuminate\Support\Facades\Artisan;
+use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Storage;
 
 use App\Http\Requests;
@@ -13,6 +14,20 @@ class EnableMatlabController extends Controller
 {
     public function enableMatlab()
     {
-        Artisan::call('enable-matlab');
+        exec('matlab -r show(1,1,1)');
+//        Artisan::call('enable-matlab');
+    }
+
+    /** apla gia na min exei 8ema me to onoma tin ekana rename. Replace tin panw kanw atm */
+    public function enableMatlabForUpdate(Request $request)
+    {
+        Artisan::call('enable-matlab', array(
+            'dataset' => $request->dataset,
+            'algorithm' => $request->algorithm,
+            'k' => $request->k,
+            'trainingset' => $request->trainingset,
+            'evolutionindex' => $request->evolutionindex)
+        );
+        
     }
 }
