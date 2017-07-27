@@ -12,7 +12,7 @@ class enableMatlab extends Command
      *
      * @var string
      */
-    protected $signature = 'enable-matlab';
+    protected $signature = 'enable-matlab {dataset} {algorithm} {k} {trainingset} {evolutionindex}';
 
     /**
      * The console command description.
@@ -38,7 +38,14 @@ class enableMatlab extends Command
      */
     public function handle()
     {
+        $dataset = $this->argument('dataset');
+        $algorithm = $this->argument('algorithm');
+        $k = $this->argument('k');
+        $trainingset = $this->argument('trainingset');
+        $evolutionindex = $this->argument('evolutionindex');
+        exec('matlab -r show(' . $dataset . ',' . $algorithm . ',' . $k . ',' . $trainingset . ',' . $evolutionindex . ')');
+//        exec('C:\Users\ioanna\Documents\Project\Datamining\storage\app\matlab.bat');
 //        exec('C:\projects\Datamining\storage\app\matlab.bat');
-        exec('C:\Users\ioanna\Documents\Project\Datamining\storage\app\matlab.bat');
+
     }
 }

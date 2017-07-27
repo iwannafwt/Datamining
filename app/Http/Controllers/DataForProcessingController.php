@@ -22,28 +22,17 @@ class DataForProcessingController extends Controller
             'evolutionIndex' => 'required'
         ));
 
-        $dataset = $request->dataset;
-        $algorithm = $request->algorithm;
-        $trainingSet = $request->trainingSet;
-        $evolutionIndex = $request->evolutionIndex;
-        $k = $request->k;
+        $data = [$request->dataset, " ", $request->algorithm, " ", $request->trainingSet, " ", $request->evolutionIndex , " ", $request->k];
 
-        $data = [$dataset, " ", $algorithm, " ", $trainingSet, " ", $evolutionIndex , " ", $k];
-
-        Storage::put('dataset.txt', $dataset);
-        Storage::put('algorithm.txt', $algorithm);
-        Storage::put('trainingset.txt', $trainingSet);
-        Storage::put('evolutionindex.txt', $evolutionIndex);
-        Storage::put('k.txt', $k);
         Storage::put('general.txt', $data);
-        return view('pages.dataConfirmation.dataConfirmation')->with('dataset', $dataset)
-                                                ->with('algorithm' , $algorithm)
-                                                ->with('trainingSet' ,$trainingSet )
-                                                ->with('evolutionIndex' , $evolutionIndex)
-                                                ->with('k' , $k);
-    }
+
+        return view('pages.dataConfirmation.dataConfirmation')->with('dataset', $request->dataset)
+                                                ->with('algorithm' , $request->algorithm)
+                                                ->with('k' , $request->k)
+                                                ->with('trainingSet' ,$request->trainingSet )
+                                                ->with('evolutionIndex' , $request->evolutionIndex);
+       }
     public function deleteData()
     {
     }
-
 }
