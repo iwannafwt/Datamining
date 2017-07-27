@@ -14,8 +14,9 @@
                         <div class="col-xs-4 selectContainer">
                             <select class="form-control" name="dataset">
                                 <option selected disabled hidden>Επέλεξε Dataset..</option>
-                                <option value="dataset1">dataset1</option>
-                                <option value="dataset2">dataset2</option>
+                                @foreach($dataset as $datasets)
+                                    <option value="{{$datasets->id}}">{{$datasets->name}}</option>
+                                @endforeach
                             </select>
                         </div>
                     </div>
@@ -24,29 +25,43 @@
                         <div class="col-xs-4 selectContainer">
                             <select class="form-control" name="algorithm" onchange="showKnn(this)">
                                 <option selected disabled hidden>Επέλεξε Αλγόριθμο..</option>
-                                <option value="knn">knn</option>
-                                <option value="bayes">bayes</option>
+                                @foreach($algorithm as $algorithms)
+                                    <option value="{{$algorithms->id}}">{{$algorithms->name}}</option>
+                                @endforeach
                             </select>
                         </div>
                     </div>
-                    <div class="form-group" id="showKnn" style="display:none;">
-                        <label class="col-xs-3 control-label">*Επιλέξτε την παράμετρο Κ:</label>
+                    <div class="form-group">
+                        <label class="col-xs-3 control-label">*Επιλέξτε k:</label>
                         <div class="col-xs-4 selectContainer">
                             <select class="form-control" name="k">
-                                <option selected disabled hidden>Επέλεξε την παραμετρο Κ..</option>
-                                <option value="" hidden></option>
-                                <option value="k1">k1</option>
-                                <option value="k2">k2</option>
+                                <option selected disabled hidden>Επέλεξε K..</option>
+                                @foreach($k as $ks)
+                                    <option value="{{$ks->id}}">{{$ks->name}}</option>
+                                @endforeach
                             </select>
                         </div>
                     </div>
+                    {{--<div class="form-group" id="showKnn" style="display:none;">--}}
+                        {{--<label class="col-xs-3 control-label">*Επιλέξτε την παράμετρο Κ:</label>--}}
+                        {{--<div class="col-xs-4 selectContainer">--}}
+                            {{--<select class="form-control" name="k">--}}
+                                {{--<option selected disabled hidden>Επέλεξε την παραμετρο Κ..</option>--}}
+                                {{--<option value="0" hidden></option>--}}
+                                {{--@foreach($k as $ks)--}}
+                                    {{--<option value="{{$ks->id}}">{{$ks->name}}</option>--}}
+                                {{--@endforeach--}}
+                            {{--</select>--}}
+                        {{--</div>--}}
+                    {{--</div>--}}
                     <div class="form-group">
                         <label class="col-xs-3 control-label">*Επιλέξτε το training Set:</label>
                         <div class="col-xs-4 selectContainer">
                             <select class="form-control" name="trainingSet">
                                 <option selected disabled hidden>Επέλεξε το training Set..</option>
-                                <option value="tr1">tr1</option>
-                                <option value="tr2">tr2</option>
+                                @foreach($trainingset as $trainingsets)
+                                    <option value="{{$trainingsets->id}}">{{$trainingsets->name}}</option>
+                                @endforeach
                             </select>
                         </div>
                     </div>
@@ -55,10 +70,9 @@
                         <div class="col-xs-4 selectContainer">
                             <select class="form-control" name="evolutionIndex">
                                 <option selected disabled hidden>Επέλεξε τον δείκτη απόδοσης..</option>
-                                <option value="accuracy">accuracy</option>
-                                <option value="errorRate">errorRate</option>
-                                <option value="sensitivity">sensitivity</option>
-                                <option value="specificity">specificity</option>
+                                @foreach($evolutionindex as $evolutionindexes)
+                                    <option value="{{$evolutionindexes->id}}">{{$evolutionindexes->name}}</option>
+                                @endforeach
                             </select>
                         </div>
                     </div>
@@ -70,7 +84,6 @@
             </div>
         </div>
         @yield('dataset')
-    </div>
 @endsection
 @section('scripts')
     {!! Html::script('js/sweetalert.min.js') !!}
