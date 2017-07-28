@@ -12,7 +12,7 @@
 */
 /* Welcome routes*/
 Route::get('/','PagesController@getHomepage');
-Route::get('index',['as'=>'index','uses'=>'PagesController@getIndex']);
+Route::get('index',['as'=>'index','uses'=>'GetIndexController@getIndex']);
 /*Forms routes*/
 Route::put('index' , ['as'=>'setdata' , 'uses'=>'DataForProcessingController@setData']);
 /*contact routes*/

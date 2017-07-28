@@ -10,9 +10,9 @@ class PagesController extends Controller
         return view('pages.welcome');
     }
 
-    public function getIndex(){
-        return view('pages.index.datasetTable');
-    }
+//    public function getIndex(){
+//        return view('pages.index.datasetTable');
+//    }
 
     public function getDataConfirmation(){
         return view('pages.dataConfirmation.dataConfirmation');
