@@ -31,29 +31,18 @@
                             </select>
                         </div>
                     </div>
-                    <div class="form-group">
-                        <label class="col-xs-3 control-label">*Επιλέξτε k:</label>
+                    <div class="form-group" id="showKnn" style="display:none;">
+                        <label class="col-xs-3 control-label">*Επιλέξτε την παράμετρο Κ:</label>
                         <div class="col-xs-4 selectContainer">
                             <select class="form-control" name="k">
-                                <option selected disabled hidden>Επέλεξε K..</option>
+                                <option selected disabled hidden>Επέλεξε την παραμετρο Κ..</option>
+                                <option value="0" hidden></option>
                                 @foreach($k as $ks)
                                     <option value="{{$ks->id}}">{{$ks->name}}</option>
                                 @endforeach
                             </select>
                         </div>
                     </div>
-                    {{--<div class="form-group" id="showKnn" style="display:none;">--}}
-                        {{--<label class="col-xs-3 control-label">*Επιλέξτε την παράμετρο Κ:</label>--}}
-                        {{--<div class="col-xs-4 selectContainer">--}}
-                            {{--<select class="form-control" name="k">--}}
-                                {{--<option selected disabled hidden>Επέλεξε την παραμετρο Κ..</option>--}}
-                                {{--<option value="0" hidden></option>--}}
-                                {{--@foreach($k as $ks)--}}
-                                    {{--<option value="{{$ks->id}}">{{$ks->name}}</option>--}}
-                                {{--@endforeach--}}
-                            {{--</select>--}}
-                        {{--</div>--}}
-                    {{--</div>--}}
                     <div class="form-group">
                         <label class="col-xs-3 control-label">*Επιλέξτε το training Set:</label>
                         <div class="col-xs-4 selectContainer">
@@ -83,8 +72,8 @@
                 </form>
             </div>
         </div>
-        @yield('dataset')
 @endsection
+
 @section('scripts')
     {!! Html::script('js/sweetalert.min.js') !!}
     {!! Html::script('js/indexDialogBox.js') !!}
