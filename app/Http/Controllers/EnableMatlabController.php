@@ -21,13 +21,28 @@ class EnableMatlabController extends Controller
     /** apla gia na min exei 8ema me to onoma tin ekana rename. Replace tin panw kanw atm */
     public function enableMatlabForUpdate(Request $request)
     {
-        Artisan::call('enable-matlab', array(
-            'dataset' => $request->dataset,
-            'algorithm' => $request->algorithm,
-            'k' => $request->k,
-            'trainingset' => $request->trainingset,
-            'evolutionindex' => $request->evolutionindex)
-        );
+        $checkalg = $request->algorithm;
+        if ($checkalg == 'knn'){
+            Artisan::call('Enable:Knn', array(
+                    'dataset' => $request->dataset,
+                    'algorithm' => $request->algorithm,
+                    'k' => $request->k,
+                    'trainingset' => $request->trainingset,
+                    'evolutionindex' => $request->evolutionindex)
+            );
+        }else{
+
+            $k = $request->k;
+            $k=null;
+
+            Artisan::call('Enable:Bayes', array(
+                    'dataset' => $request->dataset,
+                    'algorithm' => $request->algorithm,
+                    'trainingset' => $request->trainingset,
+                    'evolutionindex' => $request->evolutionindex)
+            );
+        }
+
         
     }
 }
