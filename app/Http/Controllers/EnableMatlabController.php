@@ -12,6 +12,11 @@ use App\Http\Requests;
 
 class EnableMatlabController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
     public function enableMatlab()
     {
         exec('matlab -r show(1,1,1)');

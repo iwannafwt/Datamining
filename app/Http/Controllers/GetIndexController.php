@@ -13,6 +13,11 @@ use App\Http\Requests;
 
 class GetIndexController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
     public function getIndex(){
         $datasetchoice = DatasetChoice::all();
         $algorithm = AlgorithmChoice::all();

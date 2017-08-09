@@ -1,4 +1,4 @@
-@extends('main')
+@extends('layouts.app')
 @section('stylesheets')
     {!! Html::style('css/sweetalert.css') !!}
 @endsection

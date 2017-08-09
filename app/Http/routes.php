@@ -11,12 +11,12 @@
 |
 */
 /* Welcome routes*/
-Route::get('/','PagesController@getHomepage');
+Route::get('/','GetWelcomePageController@getHomepage');
 Route::get('index',['as'=>'index','uses'=>'GetIndexController@getIndex']);
 /*Forms routes*/
 Route::put('index' , ['as'=>'setdata' , 'uses'=>'DataForProcessingController@setData']);
 /*contact routes*/
-Route::get('confirm' , ['as'=>'dataConfirmation' , 'uses'=>'PagesController@getDataConfirmation']);
+Route::get('confirm' , ['as'=>'dataConfirmation' , 'uses'=>'getDataConfirmation@getDataConfirmation']);
 Route::get('about' , ['as'=>'about' , 'uses'=>'PagesController@getAbout']);
 Route::get('contact' , ['as'=>'contact' , 'uses'=>'PagesController@getContact']);
 Route::get('cvi' , ['as'=>'cvi' , 'uses'=>'PagesController@getCvi']);
@@ -27,3 +27,7 @@ Route::put('enable' , ['as'=>'enableMatlab' , 'uses'=>'EnableMatlabController@en
 Route::resource('theory','TheoryController');
 Route::resource('dataset','DatasetController');
 
+
+Route::auth();
+
+Route::get('/home', 'HomeController@index');

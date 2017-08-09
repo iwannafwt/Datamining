@@ -1,11 +1,11 @@
-@extends('main')
+@extends('layouts.app')
 @section('content')
     <div class="row">
         <div class="col-md-3">
             <ul id="listUL">
                 @foreach ($theory as $theories)
                     <li class="{{ Request:: is($theories->name) ? "active" : ""}}"><a id="listLI"
-                                                                                      href="{{route('theory.show' , $theories->id)}}">{{$theories->name}}</a>
+                                               href="{{route('theory.show' , $theories->id)}}">{{$theories->name}}</a>
                     </li>
                 @endforeach
             </ul>
