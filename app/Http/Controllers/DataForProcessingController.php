@@ -32,18 +32,17 @@ class DataForProcessingController extends Controller
             'evolutionIndex' => 'required'
         ));
 
-        $k = KChoice::where(['id' => $request->k])->first();
-        $dataset = DatasetChoice::where(['id' => $request->dataset])->first();
-        $algorithm = AlgorithmChoice::where(['id' => $request->algorithm])->first();
-        $trainingSet = TrainingsetChoice::where(['id' => $request->trainingSet])->first();
-        $evolutionIndex = EvolutionindexChoice::where(['id' => $request->evolutionIndex])->first();
-
-        return view('pages.dataConfirmation.dataConfirmation')
-            ->with('dataset', $dataset)
-            ->with('algorithm', $algorithm)
-            ->with('k', $k)
-            ->with('trainingSet', $trainingSet)
-            ->with('evolutionIndex', $evolutionIndex);
+            $k = KChoice::where(['id' => $request->k])->first();
+            $dataset = DatasetChoice::where(['id' => $request->dataset])->first();
+            $algorithm = AlgorithmChoice::where(['id' => $request->algorithm])->first();
+            $trainingSet = TrainingsetChoice::where(['id' => $request->trainingSet])->first();
+            $evolutionIndex = EvolutionindexChoice::where(['id' => $request->evolutionIndex])->first();
+            return view('pages.dataConfirmation.dataConfirmation')
+                ->with('dataset', $dataset)
+                ->with('algorithm', $algorithm)
+                ->with('k', $k)
+                ->with('trainingSet', $trainingSet)
+                ->with('evolutionIndex', $evolutionIndex);
     }
 
     public function deleteData()

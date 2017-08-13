@@ -36,7 +36,6 @@
                         <div class="col-xs-4 selectContainer">
                             <select class="form-control" name="k">
                                 <option selected disabled hidden>Επέλεξε την παραμετρο Κ..</option>
-                                <option value="0" hidden></option>
                                 @foreach($k as $ks)
                                     <option value="{{$ks->id}}">{{$ks->name}}</option>
                                 @endforeach

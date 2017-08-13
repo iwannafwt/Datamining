@@ -14,8 +14,13 @@
                     <td>{{$algorithm->name}}</td>
                 </tr>
                 <tr>
+
                     <td>K :</td>
-                    <td>{{$k->name}}</td>
+                    @if($k == null)
+                      <td><h6>Ο αλγόριθμος δεν είναι ο ΚΝΝ . Δεν χρειάζετε να ορίσετε τη μεταβλητή κ.</h6></td>
+                    @else
+                        <td>{{$k->name}}</td>
+                    @endif
                 </tr>
                 <tr>
                     <td>Training set :</td>
@@ -35,7 +40,7 @@
                         {!! Form::open(['route'=>['enableMatlab'] , 'method'=>'PUT']) !!}
                         {{ Form::hidden('dataset', $dataset->id) }}
                         {{ Form::hidden('algorithm', $algorithm->id) }}
-                        {{ Form::hidden('k', $k->id) }}
+                        {{--{{ Form::hidden('k', $k->id) }}--}}
                         {{ Form::hidden('trainingset', $trainingSet->id) }}
                         {{ Form::hidden('evolutionindex', $evolutionIndex->id) }}
                         {!! Form::submit('Επεξεργασία αποτελεσμάτων' , ['class' => 'btn btn-success btn-block']) !!}
@@ -48,12 +53,6 @@
     </div>
 
     <style>
-        @import url(//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css);
-
-        body {
-            padding-top: 50px;
-        }
-
         .box {
             border-radius: 3px;
             box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
@@ -62,17 +61,6 @@
             display: block;
             margin-top: 60px;
         }
-
-        .box-icon {
-            background-color: #57a544;
-            border-radius: 50%;
-            display: table;
-            height: 100px;
-            margin: 0 auto;
-            width: 100px;
-            margin-top: -61px;
-        }
-
         .box-icon span {
             color: #fff;
             display: table-cell;
