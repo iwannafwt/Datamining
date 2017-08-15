@@ -2,18 +2,19 @@
 
 namespace App\Http\Controllers;
 
-use App\Theory;
+use App\dataset;
+use App\ResultFromMatlab;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 use App\Http\Requests;
 
-class TheoryController extends Controller
+class ResultFromMatlabController extends Controller
 {
     public function __construct()
     {
         $this->middleware('auth');
     }
-
     /**
      * Display a listing of the resource.
      *
@@ -21,8 +22,9 @@ class TheoryController extends Controller
      */
     public function index()
     {
-        $theory = Theory::all();
-        return view('pages.theory.index')->with('theory' , $theory);
+        $result = ResultFromMatlab::all()->where('UserId', Auth::user()->id);
+
+        return view('pages.resultfrommatlab.index')->with('result' , $result);
     }
 
     /**
@@ -54,10 +56,8 @@ class TheoryController extends Controller
      */
     public function show($id)
     {
-        $theory = Theory::all();
-        $getTheory = Theory::find($id);
-        return view('pages.theory.show')->with('gettheory' , $getTheory)
-                                                ->with('theory' , $theory);
+        $result = ResultFromMatlab::find($id);
+        return view('pages.resultfrommatlab.show')->with('result' , $result);
     }
 
     /**
@@ -91,6 +91,8 @@ class TheoryController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $result = ResultFromMatlab::find($id);
+        $result->delete();
+        return redirect()->route('result.index');
     }
 }

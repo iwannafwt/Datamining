@@ -6,17 +6,12 @@ namespace App\http\Controllers;
 
 class PagesController extends Controller
 {
-    public function getHomepage(){
-        return view('pages.welcome');
-    }
+
+
 
 //    public function getIndex(){
 //        return view('pages.index.datasetTable');
 //    }
-
-    public function getDataConfirmation(){
-        return view('pages.dataConfirmation.dataConfirmation');
-    }
 
     public function getAbout(){
         return view('pages.about');

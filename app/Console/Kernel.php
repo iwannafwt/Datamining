@@ -16,7 +16,8 @@ class Kernel extends ConsoleKernel
 //         Commands\Inspire::class,
 //        \App\Console\Commands\enableMatlab::class,
         Commands\enableMatlab::class,
-//        'App\Console\Commands\enableMatlab',
+        Commands\EnableKnn::class,
+        Commands\EnableBayes::class,
     ];
 
     /**

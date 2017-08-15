@@ -3,23 +3,22 @@
 namespace App\Console\Commands;
 
 use Illuminate\Console\Command;
-use Illuminate\Support\Facades\Storage;
 
-class enableMatlab extends Command
+class EnableBayes extends Command
 {
     /**
      * The name and signature of the console command.
      *
      * @var string
      */
-    protected $signature = 'enable-matlab {dataset} {algorithm} {k} {trainingset} {evolutionindex}';
+    protected $signature = 'Enable:Bayes {dataset} {algorithm} {trainingset} {evolutionindex} {userId}';
 
     /**
      * The console command description.
      *
      * @var string
      */
-    protected $description = 'Enable Matlab';
+    protected $description = 'Command Enable:Bayes enable matlab and run Bayes function';
 
     /**
      * Create a new command instance.
@@ -40,12 +39,10 @@ class enableMatlab extends Command
     {
         $dataset = $this->argument('dataset');
         $algorithm = $this->argument('algorithm');
-        $k = $this->argument('k');
         $trainingset = $this->argument('trainingset');
         $evolutionindex = $this->argument('evolutionindex');
-        exec(' matlab /minimize /nosplash /nodesktop /r show(' . $dataset . ',' . $algorithm . ',' . $k . ',' . $trainingset . ',' . $evolutionindex . ')');
-//        exec('C:\Users\ioanna\Documents\Project\Datamining\storage\app\matlab.bat');
-//        exec('C:\projects\Datamining\storage\app\matlab.bat');
+        $userId = $this->argument('userId');
+        exec(' matlab /minimize /nosplash /nodesktop /r bayes(' . $dataset . ',' . $algorithm . ',' . $trainingset .  ',' . $evolutionindex .',' . $userId .')');
 
     }
 }

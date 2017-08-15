@@ -10,6 +10,7 @@ use App\EvolutionindexChoice;
 use App\KChoice;
 use App\TrainingsetChoice;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 use App\Http\Requests;
 use Illuminate\Support\Facades\Artisan;
@@ -17,34 +18,36 @@ use Illuminate\Support\Facades\Storage;
 
 class DataForProcessingController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
     public function setData(Request $request)
     {
-        $this -> validate($request,array(
+        $this->validate($request, array(
             'dataset' => 'required',
             'algorithm' => 'required',
-            'k' =>'requiredif:algorithm,knn',
+            'k' => 'requiredif:algorithm,knn',
             'trainingSet' => 'required',
             'evolutionIndex' => 'required'
         ));
 
-        $data = [$request->dataset, " ", $request->algorithm, " ", $request->trainingSet, " ", $request->evolutionIndex , " ", $request->k];
+            $k = KChoice::where(['id' => $request->k])->first();
+            $dataset = DatasetChoice::where(['id' => $request->dataset])->first();
+            $algorithm = AlgorithmChoice::where(['id' => $request->algorithm])->first();
+            $trainingSet = TrainingsetChoice::where(['id' => $request->trainingSet])->first();
+            $evolutionIndex = EvolutionindexChoice::where(['id' => $request->evolutionIndex])->first();
 
-        Storage::put('general.txt', $data);
+            return view('pages.dataConfirmation.dataConfirmation')
+                ->with('dataset', $dataset)
+                ->with('algorithm', $algorithm)
+                ->with('k', $k)
+                ->with('trainingSet', $trainingSet)
+                ->with('evolutionIndex', $evolutionIndex)
+                ->with('userId' , Auth::user()->id);
+    }
 
-        $dataset = DatasetChoice::where(['id' => $request->dataset])->first();
-        $algorithm = AlgorithmChoice::where(['id' => $request->algorithm])->first();
-        $k = KChoice::where(['id' => $request->k])->first();
-        $trainingSet = TrainingsetChoice::where(['id' => $request->trainingSet])->first();
-        $evolutionIndex = EvolutionindexChoice::where(['id' => $request->evolutionIndex])->first();
-
-        return view('pages.dataConfirmation.dataConfirmation')
-                                                ->with('dataset', $dataset)
-                                                ->with('algorithm' , $algorithm)
-                                                ->with('k' , $k)
-                                                ->with('trainingSet' , $trainingSet)
-                                                ->with('evolutionIndex' , $evolutionIndex)
-            ;
-       }
     public function deleteData()
     {
     }

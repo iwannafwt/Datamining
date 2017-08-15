@@ -1,10 +1,11 @@
-@extends('main')
+@extends('layouts.app')
 @section('stylesheets')
     {!! Html::style('css/sweetalert.css') !!}
 @endsection
 @section('content')
     <!-------------------- Form -------------------------------------------------------------------->
-         <div class="col-xs-8">
+    <div class="row">
+        <div class="col-xs-8">
             <div class="form-horizontal">
                 <form action="{{ route('setdata') }}" method="POST" id="form">
                     <input type="hidden" name="_method" value="PUT">
@@ -31,29 +32,17 @@
                             </select>
                         </div>
                     </div>
-                    <div class="form-group">
-                        <label class="col-xs-3 control-label">*Επιλέξτε k:</label>
+                    <div class="form-group" id="showKnn" style="display:none;">
+                        <label class="col-xs-3 control-label">*Επιλέξτε την παράμετρο Κ:</label>
                         <div class="col-xs-4 selectContainer">
                             <select class="form-control" name="k">
-                                <option selected disabled hidden>Επέλεξε K..</option>
+                                <option selected disabled hidden>Επέλεξε την παραμετρο Κ..</option>
                                 @foreach($k as $ks)
                                     <option value="{{$ks->id}}">{{$ks->name}}</option>
                                 @endforeach
                             </select>
                         </div>
                     </div>
-                    {{--<div class="form-group" id="showKnn" style="display:none;">--}}
-                        {{--<label class="col-xs-3 control-label">*Επιλέξτε την παράμετρο Κ:</label>--}}
-                        {{--<div class="col-xs-4 selectContainer">--}}
-                            {{--<select class="form-control" name="k">--}}
-                                {{--<option selected disabled hidden>Επέλεξε την παραμετρο Κ..</option>--}}
-                                {{--<option value="0" hidden></option>--}}
-                                {{--@foreach($k as $ks)--}}
-                                    {{--<option value="{{$ks->id}}">{{$ks->name}}</option>--}}
-                                {{--@endforeach--}}
-                            {{--</select>--}}
-                        {{--</div>--}}
-                    {{--</div>--}}
                     <div class="form-group">
                         <label class="col-xs-3 control-label">*Επιλέξτε το training Set:</label>
                         <div class="col-xs-4 selectContainer">
@@ -83,8 +72,21 @@
                 </form>
             </div>
         </div>
-        @yield('dataset')
+        <div class="col-md-3">
+            {!! Form::open(['route'=>['dataset.index'] , 'method'=>'GET']) !!}
+            {!! Form::submit('Δείτε τα διαθέσιμα Dataset' , ['class' => 'btn btn btn-block']) !!}
+            {!! Form::close() !!}
+        </div>
+        <div class="col-md-3"><br></div>
+        <div class="col-md-3">
+            {!! Form::open(['route'=>['result.index'] , 'method'=>'GET']) !!}
+            {!! Form::submit('Δείτε τις προηγούμενες επεξεργασίες' , ['class' => 'btn btn btn-block']) !!}
+            {!! Form::close() !!}
+        </div>
+
+    </div>
 @endsection
+
 @section('scripts')
     {!! Html::script('js/sweetalert.min.js') !!}
     {!! Html::script('js/indexDialogBox.js') !!}
