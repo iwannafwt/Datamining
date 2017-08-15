@@ -30,6 +30,8 @@ class CreateResultFromMatlabsTable extends Migration
             $table->double('FN');
             $table->double('TN');
             $table->integer('UserId');
+            $table->integer('dataset');
+            $table->integer('algorithm');
 
             $table->timestamps();
         });

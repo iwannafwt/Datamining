@@ -24,6 +24,7 @@ class EnableMatlabController extends Controller
         if ($checkalg == 2){  //TODO statikos tropos gia na pernw to KNN . na allaksei
             Artisan::call('Enable:Knn', array(
                     'dataset' => $request->dataset,
+                    'algorithm' => $request->algorithm,
                     'k' => $request->k,
                     'trainingset' => $request->trainingset,
                     'evolutionindex' => $request->evolutionindex,
@@ -32,7 +33,7 @@ class EnableMatlabController extends Controller
         }else{
             Artisan::call('Enable:Bayes', array(
                     'dataset' => $request->dataset,
-//                    'algorithm' => $request->algorithm,
+                    'algorithm' => $request->algorithm,
                     'trainingset' => $request->trainingset,
                     'evolutionindex' => $request->evolutionindex,
                      'userId' => $request->userId)

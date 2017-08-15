@@ -80,7 +80,7 @@
         <div class="col-md-3"><br></div>
         <div class="col-md-3">
             {!! Form::open(['route'=>['result.index'] , 'method'=>'GET']) !!}
-            {!! Form::submit('Δείτε τα προηγούμενες επεξεργασίες' , ['class' => 'btn btn btn-block']) !!}
+            {!! Form::submit('Δείτε τις προηγούμενες επεξεργασίες' , ['class' => 'btn btn btn-block']) !!}
             {!! Form::close() !!}
         </div>
 

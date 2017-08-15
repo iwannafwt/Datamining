@@ -11,7 +11,7 @@ class EnableKnn extends Command
      *
      * @var string
      */
-    protected $signature = 'Enable:Knn {dataset} {k} {trainingset} {evolutionindex} {userId}';
+    protected $signature = 'Enable:Knn {dataset} {algorithm} {k} {trainingset} {evolutionindex} {userId}';
 
     /**
      * The console command description.
@@ -38,11 +38,11 @@ class EnableKnn extends Command
     public function handle()
     {
         $dataset = $this->argument('dataset');
+        $algorithm = $this->argument('algorithm');
         $k = $this->argument('k');
         $trainingset = $this->argument('trainingset');
         $evolutionindex = $this->argument('evolutionindex');
         $userId = $this->argument('userId');
-        exec(' matlab /minimize /nosplash /nodesktop /r knn(' . $dataset .  ',' . $k . ',' . $trainingset . ',' . $evolutionindex .',' . $userId . ')');
-
+        exec(' matlab /minimize /nosplash /nodesktop /r knn(' . $dataset . ',' . $algorithm .  ',' . $k . ',' . $trainingset . ',' . $evolutionindex .',' . $userId . ')');
     }
 }
