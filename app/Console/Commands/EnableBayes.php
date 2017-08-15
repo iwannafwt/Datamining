@@ -11,7 +11,7 @@ class EnableBayes extends Command
      *
      * @var string
      */
-    protected $signature = 'Enable:Bayes {dataset} {algorithm} {trainingset} {evolutionindex}';
+    protected $signature = 'Enable:Bayes {dataset} {trainingset} {evolutionindex} {userId}';
 
     /**
      * The console command description.
@@ -38,10 +38,11 @@ class EnableBayes extends Command
     public function handle()
     {
         $dataset = $this->argument('dataset');
-        $algorithm = $this->argument('algorithm');
+//        $algorithm = $this->argument('algorithm');
         $trainingset = $this->argument('trainingset');
         $evolutionindex = $this->argument('evolutionindex');
-        exec(' matlab /minimize /nosplash /nodesktop /r bayes(' . $dataset . ',' . $algorithm . ',' . $trainingset . ',' . $evolutionindex . ')');
+        $userId = $this->argument('userId');
+        exec(' matlab /minimize /nosplash /nodesktop /r bayes(' . $dataset . ',' . $trainingset .  ',' . $evolutionindex .',' . $userId .')');
 
     }
 }

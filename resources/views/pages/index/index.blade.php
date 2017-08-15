@@ -4,7 +4,8 @@
 @endsection
 @section('content')
     <!-------------------- Form -------------------------------------------------------------------->
-         <div class="col-xs-8">
+    <div class="row">
+        <div class="col-xs-8">
             <div class="form-horizontal">
                 <form action="{{ route('setdata') }}" method="POST" id="form">
                     <input type="hidden" name="_method" value="PUT">
@@ -71,6 +72,19 @@
                 </form>
             </div>
         </div>
+        <div class="col-md-3">
+            {!! Form::open(['route'=>['dataset.index'] , 'method'=>'GET']) !!}
+            {!! Form::submit('Δείτε τα διαθέσιμα Dataset' , ['class' => 'btn btn btn-block']) !!}
+            {!! Form::close() !!}
+        </div>
+        <div class="col-md-3"><br></div>
+        <div class="col-md-3">
+            {!! Form::open(['route'=>['result.index'] , 'method'=>'GET']) !!}
+            {!! Form::submit('Δείτε τα προηγούμενες επεξεργασίες' , ['class' => 'btn btn btn-block']) !!}
+            {!! Form::close() !!}
+        </div>
+
+    </div>
 @endsection
 
 @section('scripts')

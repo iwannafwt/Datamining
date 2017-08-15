@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Artisan;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Facades\Auth;
 
 use App\Http\Requests;
 
@@ -17,13 +18,6 @@ class EnableMatlabController extends Controller
         $this->middleware('auth');
     }
 
-    public function enableMatlab()
-    {
-        exec('matlab -r show(1,1,1)');
-//        Artisan::call('enable-matlab');
-    }
-
-    /** apla gia na min exei 8ema me to onoma tin ekana rename. Replace tin panw kanw atm */
     public function enableMatlabForUpdate(Request $request)
     {
         $checkalg = $request->algorithm;
@@ -32,15 +26,19 @@ class EnableMatlabController extends Controller
                     'dataset' => $request->dataset,
                     'k' => $request->k,
                     'trainingset' => $request->trainingset,
-                    'evolutionindex' => $request->evolutionindex)
+                    'evolutionindex' => $request->evolutionindex,
+                    'userId' => $request->userId)
             );
         }else{
             Artisan::call('Enable:Bayes', array(
                     'dataset' => $request->dataset,
-                    'algorithm' => $request->algorithm,
+//                    'algorithm' => $request->algorithm,
                     'trainingset' => $request->trainingset,
-                    'evolutionindex' => $request->evolutionindex)
+                    'evolutionindex' => $request->evolutionindex,
+                     'userId' => $request->userId)
             );
         }
+
+        return redirect()->route('result.index');
     }
 }

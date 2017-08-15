@@ -10,6 +10,7 @@ use App\EvolutionindexChoice;
 use App\KChoice;
 use App\TrainingsetChoice;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 use App\Http\Requests;
 use Illuminate\Support\Facades\Artisan;
@@ -37,12 +38,14 @@ class DataForProcessingController extends Controller
             $algorithm = AlgorithmChoice::where(['id' => $request->algorithm])->first();
             $trainingSet = TrainingsetChoice::where(['id' => $request->trainingSet])->first();
             $evolutionIndex = EvolutionindexChoice::where(['id' => $request->evolutionIndex])->first();
+
             return view('pages.dataConfirmation.dataConfirmation')
                 ->with('dataset', $dataset)
                 ->with('algorithm', $algorithm)
                 ->with('k', $k)
                 ->with('trainingSet', $trainingSet)
-                ->with('evolutionIndex', $evolutionIndex);
+                ->with('evolutionIndex', $evolutionIndex)
+                ->with('userId' , Auth::user()->id);
     }
 
     public function deleteData()

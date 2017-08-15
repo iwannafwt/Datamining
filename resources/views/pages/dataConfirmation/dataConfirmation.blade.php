@@ -17,7 +17,7 @@
 
                     <td>K :</td>
                     @if($k == null)
-                      <td><h6>Ο αλγόριθμος δεν είναι ο ΚΝΝ . Δεν χρειάζετε να ορίσετε τη μεταβλητή κ.</h6></td>
+                        <td><h6>Ο αλγόριθμος δεν είναι ο ΚΝΝ . Δεν χρειάζετε να ορίσετε τη μεταβλητή κ.</h6></td>
                     @else
                         <td>{{$k->name}}</td>
                     @endif
@@ -40,9 +40,14 @@
                         {!! Form::open(['route'=>['enableMatlab'] , 'method'=>'PUT']) !!}
                         {{ Form::hidden('dataset', $dataset->id) }}
                         {{ Form::hidden('algorithm', $algorithm->id) }}
-                        {{--{{ Form::hidden('k', $k->id) }}--}}
+                        @if($k == null)
+                            {{ Form::hidden('k', $k )}}
+                        @else
+                            {{ Form::hidden('k', $k->id) }}
+                        @endif
                         {{ Form::hidden('trainingset', $trainingSet->id) }}
                         {{ Form::hidden('evolutionindex', $evolutionIndex->id) }}
+                        {{ Form::hidden('userId',   $userId)  }}
                         {!! Form::submit('Επεξεργασία αποτελεσμάτων' , ['class' => 'btn btn-success btn-block']) !!}
                         {!! Form::close() !!}
                     </td>
@@ -61,6 +66,7 @@
             display: block;
             margin-top: 60px;
         }
+
         .box-icon span {
             color: #fff;
             display: table-cell;
