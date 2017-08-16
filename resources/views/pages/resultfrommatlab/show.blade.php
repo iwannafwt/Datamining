@@ -38,21 +38,21 @@
             </thead>
             <tbody>
             <tr>
-                <td>{{number_format($result->sen , 6)}}</td>
-                <td>{{number_format($result->spe, 6)}}</td>
-                <td>{{number_format($result->fpr, 6)}}</td>
-                <td>{{number_format($result->fnr, 6)}}</td>
-                <td>{{number_format($result->lrp, 6)}}</td>
-                <td>{{number_format($result->lrn, 6)}}</td>
-                <td>{{number_format($result->pre, 6)}}</td>
-                <td>{{number_format($result->npv, 6)}}</td>
-                <td>{{number_format($result->acu, 6)}}</td>
-                <td>{{number_format($result->era, 6)}}</td>
-                <td>{{number_format($result->Fsc, 6)}}</td>
-                <td>{{number_format($result->TP, 6)}}</td>
-                <td>{{number_format($result->FP, 6)}}</td>
-                <td>{{number_format($result->FN, 6)}}</td>
-                <td>{{number_format($result->TN, 6)}}</td>
+                <td>{{str_limit($result->sen ,$limit=7)}}</td>
+                <td>{{str_limit($result->spe,$limit=7)}}</td>
+                <td>{{str_limit($result->fpr,$limit=7)}}</td>
+                <td>{{str_limit($result->fnr,$limit=7)}}</td>
+                <td>{{str_limit($result->lrp,$limit=7)}}</td>
+                <td>{{str_limit($result->lrn,$limit=7)}}</td>
+                <td>{{str_limit($result->pre,$limit=7)}}</td>
+                <td>{{str_limit($result->npv,$limit=7)}}</td>
+                <td>{{str_limit($result->acu,$limit=7)}}</td>
+                <td>{{str_limit($result->era,$limit=7)}}</td>
+                <td>{{str_limit($result->Fsc,$limit=7)}}</td>
+                <td>{{str_limit($result->TP,$limit=7)}}</td>
+                <td>{{str_limit($result->FP,$limit=7)}}</td>
+                <td>{{str_limit($result->FN,$limit=7)}}</td>
+                <td>{{str_limit($result->TN,$limit=7)}}</td>
             </tr>
             </tbody>
         </table>

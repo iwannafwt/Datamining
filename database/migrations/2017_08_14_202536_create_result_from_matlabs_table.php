@@ -14,21 +14,21 @@ class CreateResultFromMatlabsTable extends Migration
     {
         Schema::create('result_from_matlabs', function (Blueprint $table) {
             $table->increments('id');
-            $table->double('sen');
-            $table->double('spe');
-            $table->double('fpr');
-            $table->double('fnr');
-            $table->double('lrp');
-            $table->double('lrn');
-            $table->double('pre');
-            $table->double('npv');
-            $table->double('acu');
-            $table->double('era');
-            $table->double('Fsc');
-            $table->double('TP');
-            $table->double('FP');
-            $table->double('FN');
-            $table->double('TN');
+            $table->string('sen');
+            $table->string('spe');
+            $table->string('fpr');
+            $table->string('fnr');
+            $table->string('lrp');
+            $table->string('lrn');
+            $table->string('pre');
+            $table->string('npv');
+            $table->string('acu');
+            $table->string('era');
+            $table->string('Fsc');
+            $table->string('TP');
+            $table->string('FP');
+            $table->string('FN');
+            $table->string('TN');
             $table->integer('UserId');
             $table->integer('dataset');
             $table->integer('algorithm');
