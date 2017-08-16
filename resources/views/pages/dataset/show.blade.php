@@ -5,7 +5,7 @@
             <div class="col-md-3">
                 <div class="panel panel-default">
                     <div class="panel-body">
-                        <embed src="{{asset($dataset->location)}}" width="70%" height="600"></embed>
+                        <embed src="{{asset($dataset->location)}}" width="100%" height="500"></embed>
                     </div>
                 </div>
             </div>

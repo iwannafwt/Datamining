@@ -1,7 +1,17 @@
 @extends('layouts.app')
 @section('content')
     <div class="container">
-        <h2>Το αρχείο μου.</h2>
+        <div class="row">
+            <div class="col-md-8">
+                <h2>Το αρχείο μου.</h2>
+            </div>
+            <div class="col-md-3">
+                <a href="{{route('index')}}" class="btn btn-default"><span class="glyphicon glyphicon-th-list"></span> Επιστροφή πίσω για επεξεργασία δεδομένων</a>
+                {{--{!! Form::open(['route'=>['index'] , 'method'=>'GET']) !!}--}}
+                {{--{!! Form::submit('Επιστροφή πίσω για επεξεργασία δεδομένων' , ['class' => 'btn btn btn-block']) !!}--}}
+                {{--{!! Form::close() !!}--}}
+            </div>
+        </div>
         <p>Εδώ μπορείτε να δείτε τα αποτελέσματα από προηγούμενες επεξεργασίες δεδομένων</p>
         <table class="table table-hover">
             <thead>
@@ -15,10 +25,10 @@
             @foreach($result as $results)
                 <tr>
                     <td>{{$results->created_at}}</td>
-                    <td>{{$results->algorithm}}</td>
-                    <td>{{$results->dataset}}</td>
-
-                    <td><a href="{{route('result.show' , $results->id)}}" class="glyphicon glyphicon-share" aria-hidden="true"></a></td>
+                    <td>{{$algorithm_id[$results->dataset -1 ]->name}}</td>
+                    <td>{{$dataset_id[$results->dataset -1 ]->name}}</td>
+                    <td><a href="{{route('result.show' , $results->id)}}" class="glyphicon glyphicon-share"
+                           aria-hidden="true"></a></td>
                 </tr>
             @endforeach
             </tbody>

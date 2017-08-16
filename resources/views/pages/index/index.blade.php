@@ -73,15 +73,13 @@
             </div>
         </div>
         <div class="col-md-3">
-            {!! Form::open(['route'=>['dataset.index'] , 'method'=>'GET']) !!}
-            {!! Form::submit('Δείτε τα διαθέσιμα Dataset' , ['class' => 'btn btn btn-block']) !!}
-            {!! Form::close() !!}
+            <a href="{{route('dataset.index')}}" class="btn btn-default"><span
+                        class="glyphicon glyphicon-arrow-right"></span> Δείτε τα διαθέσιμα Dataset</a>
         </div>
         <div class="col-md-3"><br></div>
         <div class="col-md-3">
-            {!! Form::open(['route'=>['result.index'] , 'method'=>'GET']) !!}
-            {!! Form::submit('Δείτε τις προηγούμενες επεξεργασίες' , ['class' => 'btn btn btn-block']) !!}
-            {!! Form::close() !!}
+            <a href="{{route('result.index')}}" class="btn btn-default"><span
+                        class="glyphicon glyphicon-folder-open"></span> Δείτε τις προηγούμενες επεξεργασίες</a>
         </div>
 
     </div>

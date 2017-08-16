@@ -17,7 +17,8 @@
 
                     <td>K :</td>
                     @if($k == null)
-                        <td><h6>Ο αλγόριθμος δεν είναι ο ΚΝΝ . Δεν χρειάζετε να ορίσετε τη μεταβλητή κ.</h6></td>
+                        <td><h6>Ο αλγόριθμος δεν είναι ο ΚΝΝ . Δεν χρειάζετε να ορίσετε τη μεταβλητή κ.</h6>
+                        </td>
                     @else
                         <td>{{$k->name}}</td>
                     @endif
@@ -61,10 +62,11 @@
         .box {
             border-radius: 3px;
             box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
-            padding: 10px 25px;
-            text-align: right;
+            padding: 5px 15px;
+            text-align: auto;
             display: block;
-            margin-top: 60px;
+            margin-left: auto;
+            margin-right: auto;
         }
 
         .box-icon span {
@@ -78,6 +80,7 @@
             font-size: 26px;
             letter-spacing: 2px;
             text-transform: uppercase;
+            text-align: center
         }
 
         .info > p {

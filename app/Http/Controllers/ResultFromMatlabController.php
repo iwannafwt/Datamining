@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\AlgorithmChoice;
 use App\dataset;
+use App\DatasetChoice;
 use App\ResultFromMatlab;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -20,11 +22,17 @@ class ResultFromMatlabController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+
     public function index()
     {
-        $result = ResultFromMatlab::all()->where('UserId', Auth::user()->id);
+        $result = ResultFromMatlab::where('UserId', Auth::user()->id)->get();
+        $algorithm = AlgorithmChoice::all();
+        $dataset = DatasetChoice::all();
 
-        return view('pages.resultfrommatlab.index')->with('result' , $result);
+        return view('pages.resultfrommatlab.index')
+            ->with('result' , $result)
+            ->with('algorithm_id' , $algorithm)
+            ->with('dataset_id' , $dataset);
     }
 
     /**
