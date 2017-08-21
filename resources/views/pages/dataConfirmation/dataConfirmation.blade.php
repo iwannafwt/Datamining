@@ -28,10 +28,6 @@
                     <td>{{$trainingSet->name}}</td>
                 </tr>
                 <tr>
-                    <td>EvolutionIndex :</td>
-                    <td>{{$evolutionIndex->name}}</td>
-                </tr>
-                <tr>
                     <td>
                         {!! Form::open(['route'=>['index'] , 'method'=>'PUT']) !!}
                         {!! Form::submit('Επιστροφή πίσω' , ['class' => 'btn btn-primary btn-block']) !!}
@@ -47,9 +43,8 @@
                             {{ Form::hidden('k', $k->id) }}
                         @endif
                         {{ Form::hidden('trainingset', $trainingSet->id) }}
-                        {{ Form::hidden('evolutionindex', $evolutionIndex->id) }}
                         {{ Form::hidden('userId',   $userId)  }}
-                        {!! Form::submit('Επεξεργασία αποτελεσμάτων' , ['class' => 'btn btn-success btn-block']) !!}
+                        {!! Form::submit('Εκτέλεση αλγορίθμου' , ['class' => 'btn btn-success btn-block']) !!}
                         {!! Form::close() !!}
                     </td>
                 </tr>

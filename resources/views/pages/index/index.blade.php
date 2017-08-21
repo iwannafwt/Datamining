@@ -55,17 +55,6 @@
                         </div>
                     </div>
                     <div class="form-group">
-                        <label class="col-xs-3 control-label">*Επιλέξτε δείκτη απόδοσης:</label>
-                        <div class="col-xs-4 selectContainer">
-                            <select class="form-control" name="evolutionIndex">
-                                <option selected disabled hidden>Επέλεξε τον δείκτη απόδοσης..</option>
-                                @foreach($evolutionindex as $evolutionindexes)
-                                    <option value="{{$evolutionindexes->id}}">{{$evolutionindexes->name}}</option>
-                                @endforeach
-                            </select>
-                        </div>
-                    </div>
-                    <div class="form-group">
                         <button type="submit" class="btn btn-success  col-xs-offset-5" style="margin-top:10px">Συνέχεια
                         </button>
                     </div>

@@ -27,7 +27,6 @@ class EnableMatlabController extends Controller
                     'algorithm' => $request->algorithm,
                     'k' => $request->k,
                     'trainingset' => $request->trainingset,
-                    'evolutionindex' => $request->evolutionindex,
                     'userId' => $request->userId)
             );
         }else{
@@ -35,7 +34,6 @@ class EnableMatlabController extends Controller
                     'dataset' => $request->dataset,
                     'algorithm' => $request->algorithm,
                     'trainingset' => $request->trainingset,
-                    'evolutionindex' => $request->evolutionindex,
                      'userId' => $request->userId)
             );
         }
