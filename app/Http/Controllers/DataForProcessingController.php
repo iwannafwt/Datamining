@@ -31,7 +31,6 @@ class DataForProcessingController extends Controller
             'k' => 'requiredif:algorithm,knn',
             'trainingSet' => 'required'
         ));
-
             $k = KChoice::where(['id' => $request->k])->first();
             $dataset = DatasetChoice::where(['id' => $request->dataset])->first();
             $algorithm = AlgorithmChoice::where(['id' => $request->algorithm])->first();
@@ -39,6 +38,8 @@ class DataForProcessingController extends Controller
 
             return view('pages.dataConfirmation.dataConfirmation')
                 ->with('dataset', $dataset)
+                ->with('from' , $request->from)
+                ->with('to' , $request->to)
                 ->with('algorithm', $algorithm)
                 ->with('k', $k)
                 ->with('trainingSet', $trainingSet)

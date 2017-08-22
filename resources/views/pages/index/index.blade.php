@@ -11,7 +11,7 @@
                     <input type="hidden" name="_method" value="PUT">
                     <input type="hidden" name="_token" value="{{ csrf_token() }}">
                     <div class="form-group">
-                        <label class="col-xs-3 control-label">*Επιλέξτε DataSet:</label>
+                        <label class="col-xs-4 control-label">*Επιλέξτε DataSet:</label>
                         <div class="col-xs-4 selectContainer">
                             <select class="form-control" name="dataset">
                                 <option selected disabled hidden>Επέλεξε Dataset..</option>
@@ -22,7 +22,19 @@
                         </div>
                     </div>
                     <div class="form-group">
-                        <label class="col-xs-3 control-label">*Επιλέξτε Αλγόριθμο:</label>
+                        <label class="col-xs-4 control-label">*Επιλέξτε από πια στήλη θέλετε:</label>
+                        <div class="col-xs-1 ">
+                            <input class="form-control" name="from"> </input  >
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-xs-4 control-label">*Εως πιά στήλη θέλετε για έλενχο (test set):</label>
+                        <div class="col-xs-1 ">
+                            <input class="form-control" name="to"> </input>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-xs-4 control-label">*Επιλέξτε Αλγόριθμο:</label>
                         <div class="col-xs-4 selectContainer">
                             <select class="form-control" name="algorithm" onchange="showKnn(this)">
                                 <option selected disabled hidden>Επέλεξε Αλγόριθμο..</option>
@@ -33,7 +45,7 @@
                         </div>
                     </div>
                     <div class="form-group" id="showKnn" style="display:none;">
-                        <label class="col-xs-3 control-label">*Επιλέξτε την παράμετρο Κ:</label>
+                        <label class="col-xs-4 control-label">*Επιλέξτε την παράμετρο Κ:</label>
                         <div class="col-xs-4 selectContainer">
                             <select class="form-control" name="k">
                                 <option selected disabled hidden>Επέλεξε την παραμετρο Κ..</option>
@@ -44,7 +56,8 @@
                         </div>
                     </div>
                     <div class="form-group">
-                        <label class="col-xs-3 control-label">*Επιλέξτε το training Set:</label>
+                        <label class="col-xs-4 control-label">*Επιλέξτε το ποσοστό δεδομένων για εκπαίδευση (training
+                            Set):</label>
                         <div class="col-xs-4 selectContainer">
                             <select class="form-control" name="trainingSet">
                                 <option selected disabled hidden>Επέλεξε το training Set..</option>
@@ -62,15 +75,14 @@
             </div>
         </div>
         <div class="col-md-3">
-            <a href="{{route('dataset.index')}}" class="btn btn-default"><span
-                        class="glyphicon glyphicon-arrow-right"></span> Δείτε τα διαθέσιμα Dataset</a>
-        </div>
-        <div class="col-md-3"><br></div>
-        <div class="col-md-3">
             <a href="{{route('result.index')}}" class="btn btn-default"><span
                         class="glyphicon glyphicon-folder-open"></span> Δείτε τις προηγούμενες επεξεργασίες</a>
         </div>
-
+        <div class="col-md-3"><br></div>
+        <div class="col-md-3">
+            <a href="{{route('dataset.index')}}" class="btn btn-default"><span
+                        class="glyphicon glyphicon-arrow-right"></span> Δείτε τα διαθέσιμα Dataset</a>
+        </div>
     </div>
 @endsection
 

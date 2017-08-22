@@ -10,6 +10,13 @@
                     <td>{{$dataset->name}}</td>
                 </tr>
                 <tr>
+                    <td>Test set</td>
+                    <td>Από : {{$from}} Έως : {{$to}}</td>
+                </tr>
+                <tr>
+
+                </tr>
+                <tr>
                     <td>Αλγόρυθμος :</td>
                     <td>{{$algorithm->name}}</td>
                 </tr>
@@ -36,6 +43,8 @@
                     <td>
                         {!! Form::open(['route'=>['enableMatlab'] , 'method'=>'PUT']) !!}
                         {{ Form::hidden('dataset', $dataset->id) }}
+                        {{ Form::hidden('from',$from ) }}
+                        {{ Form::hidden('to', $to) }}
                         {{ Form::hidden('algorithm', $algorithm->id) }}
                         @if($k == null)
                             {{ Form::hidden('k', $k )}}
