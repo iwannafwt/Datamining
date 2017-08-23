@@ -27,26 +27,45 @@ class DataForProcessingController extends Controller
     {
         $this->validate($request, array(
             'dataset' => 'required',
+            'from' => 'required',
+            'to' => 'required',
             'algorithm' => 'required',
             'k' => 'requiredif:algorithm,knn',
             'trainingSet' => 'required'
         ));
-            $k = KChoice::where(['id' => $request->k])->first();
-            $dataset = DatasetChoice::where(['id' => $request->dataset])->first();
-            $algorithm = AlgorithmChoice::where(['id' => $request->algorithm])->first();
-            $trainingSet = TrainingsetChoice::where(['id' => $request->trainingSet])->first();
+        if (($request->from < 1) || ($request->from < 1))  {
+            \Session::flash('key' , 'Έχετε βάλει τιμή μικρότερη του 1 στο Test set .');
+            return redirect()->route('index');
+        }
 
-            return view('pages.dataConfirmation.dataConfirmation')
-                ->with('dataset', $dataset)
-                ->with('from' , $request->from)
-                ->with('to' , $request->to)
-                ->with('algorithm', $algorithm)
-                ->with('k', $k)
-                ->with('trainingSet', $trainingSet)
-                ->with('userId' , Auth::user()->id);
-    }
+        if ($request->dataset == 1) {
+            if (($request->from > 5) || ($request->to > 5)) {
+                \Session::flash('key' , 'Έχετε βάλει τιμή μεγαλύτερη του 5 στο Test set . Παρακαλώ κοιτάξτε τον πίνακα για τις τιμές που μπορείτε να βάλετε στο Test set .');
+                return redirect()->route('index');
+            }
+        } elseif ($request->dataset == 2) {
+            if( ($request->from > 2) || ($request->to > 2)) {
+                \Session::flash('key' , 'Έχετε βάλει τιμή μεγαλύτερη του 2 στο Test set . Παρακαλώ κοιτάξτε τον πίνακα για τις τιμές που μπορείτε να βάλετε στο Test set .');
+                return redirect()->route('index');
+            }
+        } else {
+            if (($request->from > 4) || ($request->to > 4)) {
+                \Session::flash('key' , 'Έχετε βάλει τιμή μεγαλύτερη του 4 στο Test set . Παρακαλώ κοιτάξτε τον πίνακα για τις τιμές που μπορείτε να βάλετε στο Test set .');
+                return redirect()->route('index');
+            }
+        }
+        $k = KChoice::where(['id' => $request->k])->first();
+        $dataset = DatasetChoice::where(['id' => $request->dataset])->first();
+        $algorithm = AlgorithmChoice::where(['id' => $request->algorithm])->first();
+        $trainingSet = TrainingsetChoice::where(['id' => $request->trainingSet])->first();
 
-    public function deleteData()
-    {
+        return view('pages.dataConfirmation.dataConfirmation')
+            ->with('dataset', $dataset)
+            ->with('from', $request->from)
+            ->with('to', $request->to)
+            ->with('algorithm', $algorithm)
+            ->with('k', $k)
+            ->with('trainingSet', $trainingSet)
+            ->with('userId', Auth::user()->id);
     }
 }
