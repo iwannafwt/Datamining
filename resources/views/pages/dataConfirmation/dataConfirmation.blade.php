@@ -1,4 +1,5 @@
 @extends('layouts.app')
+@section('title','Eπιβεβαίωση στοιχείων για επεξεργασία')
 @section('content')
     <div class="box">
         <div class="info">

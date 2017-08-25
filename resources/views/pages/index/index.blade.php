@@ -1,4 +1,5 @@
 @extends('layouts.app')
+@section('title','Αρχική σελίδα')
 @section('stylesheets')
     {!! Html::style('css/sweetalert.css') !!}
 @endsection
