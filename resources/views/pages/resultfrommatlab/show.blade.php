@@ -67,4 +67,7 @@
             </div>
         </div>
     </div>
+    <div id="pop_div">    </div>
+
+    <?= Lava::render('AreaChart', 'Population', 'pop_div') ?>
 @endsection
