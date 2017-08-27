@@ -3,11 +3,11 @@
 namespace App\Http\Controllers;
 
 use App\AlgorithmChoice;
-use App\dataset;
 use App\DatasetChoice;
 use App\ResultFromMatlab;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Khill\Lavacharts\Laravel\LavachartsFacade as Lava;
 
 use App\Http\Requests;
 
@@ -17,12 +17,11 @@ class ResultFromMatlabController extends Controller
     {
         $this->middleware('auth');
     }
+
     /**
      * Display a listing of the resource.
      *
-     * @return \Illuminate\Http\Response
      */
-
     public function index()
     {
         $result = ResultFromMatlab::where('UserId', Auth::user()->id)->get();
@@ -59,13 +58,40 @@ class ResultFromMatlabController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
      */
     public function show($id)
     {
+
         $result = ResultFromMatlab::find($id);
-        return view('pages.resultfrommatlab.show')->with('result' , $result);
+        $c2After =  substr($result->C2 , 1 ,strlen($result->C2)-2);
+        $IDCAfter =  substr($result->C2 , 1 ,strlen($result->IDX)-2);
+
+        $c2 = explode(";", $c2After);
+        $IDX = explode(";", $IDCAfter);
+
+        $datatable = Lava::DataTable();
+        $datatable->addNumberColumn('C2');
+        $datatable->addNumberColumn('IDX');
+
+        for ($i=0; $i < sizeof($c2); $i++) {
+            $datatable->addRow([10, 20]);
+            $datatable->addRow([30, 25]);
+        }
+
+        Lava::ScatterChart('Knn', $datatable, [
+            'width' => 600, /*to megethos tou diagrammatos*/
+            'legend' => [
+                'position' => 'none'
+            ],
+            'hAxis' => [
+                'title' => 'C2'
+            ],
+            'vAxis' => [
+                'title' => 'IDX'
+            ]
+        ]);
+        return view('pages.resultfrommatlab.show')
+            ->with('result' , $result);
     }
 
     /**

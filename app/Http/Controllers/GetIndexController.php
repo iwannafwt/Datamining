@@ -23,14 +23,12 @@ class GetIndexController extends Controller
         $algorithm = AlgorithmChoice::all();
         $k = KChoice::all();
         $trainingset = TrainingsetChoice::all();
-        $evolutionindex = EvolutionindexChoice::all();
 
         return view('pages.index.index')
             ->with('dataset' , $datasetchoice)
             ->with('algorithm' , $algorithm)
             ->with('k' , $k)
             ->with('trainingset' , $trainingset)
-            ->with('evolutionindex' , $evolutionindex)
             ;
     }
 }

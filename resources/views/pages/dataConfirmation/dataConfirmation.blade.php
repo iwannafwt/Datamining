@@ -1,4 +1,5 @@
 @extends('layouts.app')
+@section('title','Eπιβεβαίωση στοιχείων για επεξεργασία')
 @section('content')
     <div class="box">
         <div class="info">
@@ -8,6 +9,13 @@
                 <tr>
                     <td>Dataset :</td>
                     <td>{{$dataset->name}}</td>
+                </tr>
+                <tr>
+                    <td>Test set</td>
+                    <td>Από : {{$from}} Έως : {{$to}}</td>
+                </tr>
+                <tr>
+
                 </tr>
                 <tr>
                     <td>Αλγόρυθμος :</td>
@@ -28,10 +36,6 @@
                     <td>{{$trainingSet->name}}</td>
                 </tr>
                 <tr>
-                    <td>EvolutionIndex :</td>
-                    <td>{{$evolutionIndex->name}}</td>
-                </tr>
-                <tr>
                     <td>
                         {!! Form::open(['route'=>['index'] , 'method'=>'PUT']) !!}
                         {!! Form::submit('Επιστροφή πίσω' , ['class' => 'btn btn-primary btn-block']) !!}
@@ -40,6 +44,8 @@
                     <td>
                         {!! Form::open(['route'=>['enableMatlab'] , 'method'=>'PUT']) !!}
                         {{ Form::hidden('dataset', $dataset->id) }}
+                        {{ Form::hidden('from',$from ) }}
+                        {{ Form::hidden('to', $to) }}
                         {{ Form::hidden('algorithm', $algorithm->id) }}
                         @if($k == null)
                             {{ Form::hidden('k', $k )}}
@@ -47,9 +53,8 @@
                             {{ Form::hidden('k', $k->id) }}
                         @endif
                         {{ Form::hidden('trainingset', $trainingSet->id) }}
-                        {{ Form::hidden('evolutionindex', $evolutionIndex->id) }}
                         {{ Form::hidden('userId',   $userId)  }}
-                        {!! Form::submit('Επεξεργασία αποτελεσμάτων' , ['class' => 'btn btn-success btn-block']) !!}
+                        {!! Form::submit('Εκτέλεση αλγορίθμου' , ['class' => 'btn btn-success btn-block']) !!}
                         {!! Form::close() !!}
                     </td>
                 </tr>

@@ -24,18 +24,20 @@ class EnableMatlabController extends Controller
         if ($checkalg == 2){  //TODO statikos tropos gia na pernw to KNN . na allaksei
             Artisan::call('Enable:Knn', array(
                     'dataset' => $request->dataset,
+                    'from'=> $request->from,
+                    'to'=> $request->to,
                     'algorithm' => $request->algorithm,
                     'k' => $request->k,
                     'trainingset' => $request->trainingset,
-                    'evolutionindex' => $request->evolutionindex,
                     'userId' => $request->userId)
             );
         }else{
             Artisan::call('Enable:Bayes', array(
                     'dataset' => $request->dataset,
+                    'from'=> $request->from,
+                    'to'=> $request->to,
                     'algorithm' => $request->algorithm,
                     'trainingset' => $request->trainingset,
-                    'evolutionindex' => $request->evolutionindex,
                      'userId' => $request->userId)
             );
         }

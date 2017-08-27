@@ -1,4 +1,5 @@
 @extends('layouts.app')
+@section('title','Το αρχείο μου')
 @section('content')
     <div class="container">
         <div class="row">
@@ -7,9 +8,6 @@
             </div>
             <div class="col-md-3">
                 <a href="{{route('index')}}" class="btn btn-default"><span class="glyphicon glyphicon-th-list"></span> Επιστροφή πίσω για επεξεργασία δεδομένων</a>
-                {{--{!! Form::open(['route'=>['index'] , 'method'=>'GET']) !!}--}}
-                {{--{!! Form::submit('Επιστροφή πίσω για επεξεργασία δεδομένων' , ['class' => 'btn btn btn-block']) !!}--}}
-                {{--{!! Form::close() !!}--}}
             </div>
         </div>
         <p>Εδώ μπορείτε να δείτε τα αποτελέσματα από προηγούμενες επεξεργασίες δεδομένων</p>
@@ -25,7 +23,7 @@
             @foreach($result as $results)
                 <tr>
                     <td>{{$results->created_at}}</td>
-                    <td>{{$algorithm_id[$results->dataset -1 ]->name}}</td>
+                    <td>{{$algorithm_id[$results->algorithm-1 ]->name}}</td>
                     <td>{{$dataset_id[$results->dataset -1 ]->name}}</td>
                     <td><a href="{{route('result.show' , $results->id)}}" class="glyphicon glyphicon-share"
                            aria-hidden="true"></a></td>
