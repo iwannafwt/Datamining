@@ -63,11 +63,15 @@
         <!--------------------------------------------------------------------------------------->
         <div class="row">
             <div class="col md-12">
+                <div id="chart-div"></div>
+                @scatterchart('Knn', 'chart-div')
+            </div>
+            <div class="col-md-6">
+                <h6>Στοιχεία που χρησιμοποιήθηκαν</h6>
+
 
             </div>
         </div>
     </div>
-    <div id="pop_div">    </div>
 
-    <?= Lava::render('AreaChart', 'Population', 'pop_div') ?>
 @endsection
