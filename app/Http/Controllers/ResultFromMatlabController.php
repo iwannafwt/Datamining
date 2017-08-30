@@ -24,14 +24,16 @@ class ResultFromMatlabController extends Controller
      */
     public function index()
     {
+        \Session::flash('time' , 'Τα αποτελέσματα από την επεξεργασία δεδομένων των αλγορίθμων αργούν . 
+                                Παρακαλώ κάντε ανανέωση της σελίδας για να εμφανιστούν τα αποτελέσματα. ');
         $result = ResultFromMatlab::where('UserId', Auth::user()->id)->get();
         $algorithm = AlgorithmChoice::all();
         $dataset = DatasetChoice::all();
 
         return view('pages.resultfrommatlab.index')
-            ->with('result' , $result)
-            ->with('algorithm_id' , $algorithm)
-            ->with('dataset_id' , $dataset);
+            ->with('result', $result)
+            ->with('algorithm_id', $algorithm)
+            ->with('dataset_id', $dataset);
     }
 
     /**
@@ -47,7 +49,7 @@ class ResultFromMatlabController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param  \Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
@@ -63,23 +65,22 @@ class ResultFromMatlabController extends Controller
     {
 
         $result = ResultFromMatlab::find($id);
-        $c2After =  substr($result->C2 , 1 ,strlen($result->C2)-2);
-        $IDCAfter =  substr($result->C2 , 1 ,strlen($result->IDX)-2);
+        $c2After = substr($result->C2, 1, strlen($result->C2) - 2);
+        $IDCAfter = substr($result->C2, 1, strlen($result->IDX) - 2);
 
-        $c2 = explode(";", $c2After);
-        $IDX = explode(";", $IDCAfter);
+        $c2 = array_map('intval', explode(';', $c2After));
+        $IDX = array_map('intval', explode(';', $IDCAfter));
 
         $datatable = Lava::DataTable();
         $datatable->addNumberColumn('C2');
-        $datatable->addNumberColumn('IDX');
+        $datatable->addNumberColumn('');
 
-        for ($i=0; $i < sizeof($c2); $i++) {
-            $datatable->addRow([10, 20]);
-            $datatable->addRow([30, 25]);
+        for ($i = 0; $i < sizeof($c2); $i++) {
+            $datatable->addRow([$c2[$i], $c2[$i]]);
         }
 
         Lava::ScatterChart('Knn', $datatable, [
-            'width' => 600, /*to megethos tou diagrammatos*/
+            'width' => 500, /*to megethos tou diagrammatos*/
             'legend' => [
                 'position' => 'none'
             ],
@@ -87,17 +88,37 @@ class ResultFromMatlabController extends Controller
                 'title' => 'C2'
             ],
             'vAxis' => [
+                'title' => ''
+            ]
+        ]);
+        $datatableIDX = Lava::DataTable();
+        $datatableIDX->addNumberColumn('IDX');
+        $datatableIDX->addNumberColumn('');
+
+        for ($i = 0; $i < sizeof($IDX); $i++) {
+            $datatableIDX->addRow([$IDX[$i], $IDX[$i]]);
+        }
+
+        Lava::ScatterChart('IDX', $datatableIDX, [
+            'width' => 500, /*to megethos tou diagrammatos*/
+            'legend' => [
+                'position' => 'none'
+            ],
+            'hAxis' => [
                 'title' => 'IDX'
+            ],
+            'vAxis' => [
+                'title' => ''
             ]
         ]);
         return view('pages.resultfrommatlab.show')
-            ->with('result' , $result);
+            ->with('result', $result);
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
+     * @param  int $id
      * @return \Illuminate\Http\Response
      */
     public function edit($id)
@@ -108,8 +129,8 @@ class ResultFromMatlabController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param  \Illuminate\Http\Request $request
+     * @param  int $id
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, $id)
@@ -120,7 +141,7 @@ class ResultFromMatlabController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param  int $id
      * @return \Illuminate\Http\Response
      */
     public function destroy($id)

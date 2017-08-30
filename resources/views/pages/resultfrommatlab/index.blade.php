@@ -2,6 +2,10 @@
 @section('title','Το αρχείο μου')
 @section('content')
     <div class="container">
+        @if(Session::has('time'))
+            <div class="alert alert-info">{{Session::get('time')}}</div>
+
+        @endif
         <div class="row">
             <div class="col-md-8">
                 <h2>Το αρχείο μου.</h2>

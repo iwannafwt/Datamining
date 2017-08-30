@@ -66,11 +66,14 @@
                 <div id="chart-div"></div>
                 @scatterchart('Knn', 'chart-div')
             </div>
-            <div class="col-md-6">
-                <h6>Στοιχεία που χρησιμοποιήθηκαν</h6>
-
-
+            {{--<div class="col md-12"><br><br><br><br></div>--}}
+            <div class="col md-12">
+                <div id="chart-div2"></div>
+                @scatterchart('IDX', 'chart-div2')
             </div>
+            {{--<div class="col-md-6">--}}
+                {{--<h6>Στοιχεία που χρησιμοποιήθηκαν</h6>--}}
+            {{--</div>--}}
         </div>
     </div>
 
