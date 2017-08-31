@@ -65,6 +65,8 @@ class ResultFromMatlabController extends Controller
     {
 
         $result = ResultFromMatlab::find($id);
+        $algorithm = AlgorithmChoice::all();
+        $dataset = DatasetChoice::all();
         $c2After = substr($result->C2, 1, strlen($result->C2) - 2);
         $IDCAfter = substr($result->C2, 1, strlen($result->IDX) - 2);
 
@@ -112,6 +114,8 @@ class ResultFromMatlabController extends Controller
             ]
         ]);
         return view('pages.resultfrommatlab.show')
+            ->with('dataset_id' , $dataset)
+            ->with('algorithm_id' , $algorithm)
             ->with('result', $result);
     }
 

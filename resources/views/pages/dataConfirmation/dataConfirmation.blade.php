@@ -52,7 +52,7 @@
                         @else
                             {{ Form::hidden('k', $k->id) }}
                         @endif
-                        {{ Form::hidden('trainingset', $trainingSet->id) }}
+                        {{ Form::hidden('trainingset', $trainingSet->value) }}
                         {{ Form::hidden('userId',   $userId)  }}
                         {!! Form::submit('Εκτέλεση αλγορίθμου' , ['class' => 'btn btn-success btn-block']) !!}
                         {!! Form::close() !!}
