@@ -27,7 +27,7 @@
             @foreach($result as $results)
                 <tr>
                     <td>{{$results->created_at}}</td>
-                    <td>{{$algorithm_id[$results->algorithm-1 ]->name}}</td>
+                    <td>{{$algorithm_id[$results->algorithm -1 ]->name}}</td>
                     <td>{{$dataset_id[$results->dataset -1 ]->name}}</td>
                     <td><a href="{{route('result.show' , $results->id)}}" class="glyphicon glyphicon-share"
                            aria-hidden="true"></a></td>
