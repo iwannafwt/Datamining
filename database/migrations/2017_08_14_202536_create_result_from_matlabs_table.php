@@ -38,6 +38,7 @@ class CreateResultFromMatlabsTable extends Migration
             $table->integer('trainingset');
             $table->text('C2');
             $table->text('IDX');
+            $table->string('image');
 
             $table->timestamps();
         });

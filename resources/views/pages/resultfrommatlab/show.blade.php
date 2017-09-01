@@ -101,6 +101,9 @@
                 <div id="chart-div2"></div>
                 @scatterchart('IDX', 'chart-div2')
             </div>
+                <div class="col-md-3">
+                    <img src="{{asset('images/' . $result->image)}}" height="500" width="1000">
+                </div>
         </div>
     </div>
     </div>
