@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\dataset;
+use App\DatasetChoice;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
@@ -17,11 +18,10 @@ class datasetController extends Controller
     /**
      * Display a listing of the resource.
      *
-     * @return \Illuminate\Http\Response
      */
     public function index()
     {
-        $dataset = dataset::all();
+        $dataset = DatasetChoice::all();
         return view('pages.dataset.index')->with('dataset',$dataset);
     }
 
@@ -49,13 +49,14 @@ class datasetController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
      */
     public function show($id)
     {
-        $dataset = dataset::find($id);
-        return view('pages.dataset.show')->with('dataset' , $dataset);
+        $datasetall = DatasetChoice::all();
+        $dataset = DatasetChoice::find($id);
+        return view('pages.dataset.show')
+            ->with('dataset' , $dataset)
+            ->with('datasetall' , $datasetall);
     }
 
     /**

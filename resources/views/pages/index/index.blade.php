@@ -139,7 +139,7 @@
     </div>
 @endsection
 @section('scripts')
-    {!! Html::script('js/sweetalert.min.js') !!}
-    {!! Html::script('js/indexDialogBox.js') !!}
+    {{--{!! Html::script('js/sweetalert.min.js') !!}--}}
+    {{--{!! Html::script('js/indexDialogBox.js') !!}--}}
     {!! Html::script('js/showKnn.js') !!}
 @endsection

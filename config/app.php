@@ -158,6 +158,7 @@ return [
         App\Providers\AuthServiceProvider::class,
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
+        Intervention\Image\ImageServiceProvider::class,
 
     ],
 
@@ -208,6 +209,7 @@ return [
         'Html' => Collective\Html\HtmlFacade::class,
         'Alert' => UxWeb\SweetAlert\SweetAlert::class,
         'Lava' => Khill\Lavacharts\Laravel\LavachartsFacade::class,
+        'Image' => Intervention\Image\Facades\Image::class,
     ],
 
 ];

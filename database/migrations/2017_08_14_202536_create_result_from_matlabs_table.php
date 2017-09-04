@@ -32,8 +32,13 @@ class CreateResultFromMatlabsTable extends Migration
             $table->integer('UserId');
             $table->integer('dataset');
             $table->integer('algorithm');
+            $table->integer('fromvar');
+            $table->integer('tovar');
+            $table->integer('k1');
+            $table->integer('trainingset');
             $table->text('C2');
             $table->text('IDX');
+            $table->string('image');
 
             $table->timestamps();
         });
