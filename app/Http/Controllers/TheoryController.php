@@ -17,7 +17,6 @@ class TheoryController extends Controller
     /**
      * Display a listing of the resource.
      *
-     * @return \Illuminate\Http\Response
      */
     public function index()
     {
@@ -49,15 +48,14 @@ class TheoryController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
      */
     public function show($id)
     {
         $theory = Theory::all();
         $getTheory = Theory::find($id);
-        return view('pages.theory.show')->with('gettheory' , $getTheory)
-                                                ->with('theory' , $theory);
+        return view('pages.theory.show')
+            ->with('gettheory' , $getTheory)
+            ->with('theory' , $theory);
     }
 
     /**

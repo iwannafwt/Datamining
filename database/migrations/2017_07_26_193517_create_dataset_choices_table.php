@@ -16,6 +16,8 @@ class CreateDatasetChoicesTable extends Migration
             $table->increments('id');
             $table->string('value');
             $table->string('name');
+            $table->string('content');
+            $table->string('description');
         });
     }
 
