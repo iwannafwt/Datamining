@@ -8,6 +8,7 @@ use App\Dataset2;
 use App\DatasetChoice;
 use App\EvolutionindexChoice;
 use App\KChoice;
+use App\ResultFromMatlab;
 use App\TrainingsetChoice;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -54,6 +55,7 @@ class DataForProcessingController extends Controller
                 return redirect()->route('index');
             }
         }
+
         $k = KChoice::where(['id' => $request->k])->first();
         $dataset = DatasetChoice::where(['id' => $request->dataset])->first();
         $algorithm = AlgorithmChoice::where(['id' => $request->algorithm])->first();

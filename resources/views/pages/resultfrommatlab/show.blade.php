@@ -94,7 +94,7 @@
             <!------------------------------------------------------------------------------------------->
             <div class="col md-3">
                 <div id="chart-div"></div>
-                @scatterchart('Knn', 'chart-div')
+                @scatterchart('C2', 'chart-div')
             </div>
             {{--<div class="col md-12"><br><br><br><br></div>--}}
             <div class="col md-3">

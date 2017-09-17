@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\ResultFromMatlab;
 use Illuminate\Http\Request;
 
 use Illuminate\Support\Facades\Artisan;
@@ -41,7 +42,6 @@ class EnableMatlabController extends Controller
                      'userId' => $request->userId)
             );
         }
-
-        return redirect()->route('result.index');
+        return redirect()->route('progressBar');
     }
 }
