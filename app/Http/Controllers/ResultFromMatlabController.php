@@ -67,8 +67,10 @@ class ResultFromMatlabController extends Controller
         $result = ResultFromMatlab::find($id);
         $algorithm = AlgorithmChoice::all();
         $dataset = DatasetChoice::all();
+
+
         $c2After = substr($result->C2, 1, strlen($result->C2) - 2);
-        $IDCAfter = substr($result->C2, 1, strlen($result->IDX) - 2);
+        $IDCAfter = substr($result->IDX, 1, strlen($result->IDX) - 2);
 
         $c2 = array_map('intval', explode(';', $c2After));
         $IDX = array_map('intval', explode(';', $IDCAfter));
@@ -78,10 +80,10 @@ class ResultFromMatlabController extends Controller
         $datatable->addNumberColumn('');
 
         for ($i = 0; $i < sizeof($c2); $i++) {
-            $datatable->addRow([$c2[$i], $c2[$i]]);
+            $datatable->addRow([$i, $c2[$i]]);
         }
 
-        Lava::ScatterChart('Knn', $datatable, [
+        Lava::ScatterChart('C2', $datatable, [
             'width' => 500, /*to megethos tou diagrammatos*/
             'legend' => [
                 'position' => 'none'
@@ -98,7 +100,7 @@ class ResultFromMatlabController extends Controller
         $datatableIDX->addNumberColumn('');
 
         for ($i = 0; $i < sizeof($IDX); $i++) {
-            $datatableIDX->addRow([$IDX[$i], $IDX[$i]]);
+            $datatableIDX->addRow([$i, $IDX[$i]]);
         }
 
         Lava::ScatterChart('IDX', $datatableIDX, [
