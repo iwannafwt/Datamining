@@ -1,6 +1,19 @@
 @extends('layouts.app')
 @section('title','Παρακαλώ περιμένετε . Επεξεργασία δεδομένων.')
 @section('content')
+    <div class="container">
+        <div class="row">
+            <hr>
+            <div class="col-md-8">
+                <div class="col-md-4">
+                    <a href="{{route('index')}}" class="btn btn-primary">Επιστροφή στην αρχική σελίδα</a>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <a href="{{route('result.index')}}" class="btn btn-default"><span
+                            class="glyphicon glyphicon-folder-open"></span> Δείτε τις προηγούμενες επεξεργασίες</a>
+            </div>
+        </div>
     <div class="jmWatch">
         <div class="jmTimer">
             <div class="jmTicker"></div>
