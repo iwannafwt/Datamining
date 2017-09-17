@@ -68,7 +68,7 @@
                                                 <button type="button" class="close" data-dismiss="modal">&times;</button>
                                             </div>
                                             <div class="modal-body">
-                                                @include('pages.index.datasetTable')
+                                               @include('pages.index.datasetTable')
                                             </div>
                                             <div class="modal-footer">
                                                 <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
@@ -128,7 +128,7 @@
                 </div>
             </div>
             <div class="col-md-3"><br></div>
-            <div class="col-md-3">
+            <div class="col-md-6">
                 <hr>
                 <a href="{{route('dataset.index')}}" class="btn btn-default"><span
                             class="glyphicon glyphicon-arrow-right"></span> Διαβάστε περισσότερα για
