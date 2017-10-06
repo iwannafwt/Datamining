@@ -1,5 +1,6 @@
 @extends('layouts.app')
 @section('title','Διαθέσιμοι πίνακες')
+@section('content')
     <div class="container">
         <div class="row">
             <hr>
@@ -30,6 +31,7 @@
         </div>
     </div>
     <div class="row"><br><br><br><br><br><br></div>
+@endsection
     <style>
         .active {
             background-color: #CBC6C6; /* active color */
@@ -61,4 +63,3 @@
             color: white;
         }
     </style>
-@endsection

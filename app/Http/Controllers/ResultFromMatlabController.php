@@ -26,7 +26,7 @@ class ResultFromMatlabController extends Controller
     {
         \Session::flash('time' , 'Τα αποτελέσματα από την επεξεργασία δεδομένων των αλγορίθμων αργούν . 
                                 Παρακαλώ κάντε ανανέωση της σελίδας για να εμφανιστούν τα αποτελέσματα. ');
-        $result = ResultFromMatlab::where('UserId', Auth::user()->id)->get();
+        $result = ResultFromMatlab::where('UserId', Auth::user()->id) ->orderBy('created_at', 'desc')->get();
         $algorithm = AlgorithmChoice::all();
         $dataset = DatasetChoice::all();
 
