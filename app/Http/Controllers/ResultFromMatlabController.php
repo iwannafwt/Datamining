@@ -93,7 +93,8 @@ class ResultFromMatlabController extends Controller
             ],
             'vAxis' => [
                 'title' => ''
-            ]
+            ],
+            'colors' => ['red']
         ]);
         $datatableIDX = Lava::DataTable();
         $datatableIDX->addNumberColumn('IDX');
