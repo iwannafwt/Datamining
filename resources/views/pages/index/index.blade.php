@@ -116,6 +116,7 @@
             <!-----------------------------information about choices--------------------------------------------------->
             <div class="col md-3">
                 <div class="col-xs-4 ">
+                    <h6>Επιλογές που μπορείτε να κάνετε σχετικά με τον αριθμό στηλών του πίνακα</h6>
                     @include('pages.index.datasetTable')
                 </div>
             </div>
