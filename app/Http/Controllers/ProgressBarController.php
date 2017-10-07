@@ -9,7 +9,7 @@ use App\Http\Requests;
 
 class ProgressBarController extends Controller
 {
-    public function progressBar(){
-        return view('pages.dataConfirmation.progressBar');
+    public function progressBar($countData){
+        return view('pages.dataConfirmation.progressBar')->with('count' , $countData);
     }
 }

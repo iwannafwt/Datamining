@@ -42,6 +42,8 @@ class EnableMatlabController extends Controller
                      'userId' => $request->userId)
             );
         }
-        return redirect()->route('progressBar');
+
+        $countData = ResultFromMatlab::all()->count();
+        return redirect()->route('progressBar' , $countData);
     }
 }

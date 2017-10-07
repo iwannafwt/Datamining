@@ -21,7 +21,7 @@ Route::get('about' , ['as'=>'about' , 'uses'=>'PagesController@getAbout']);
 Route::get('contact' , ['as'=>'contact' , 'uses'=>'PagesController@getContact']);
 Route::get('cvi' , ['as'=>'cvi' , 'uses'=>'PagesController@getCvi']);
 Route::get('cvm' , ['as'=>'cvm' , 'uses'=>'PagesController@getCvm']);
-Route::get('progressBar' , ['as'=>'progressBar' , 'uses'=>'ProgressBarController@progressBar']);
+Route::get('progressBar{count}' , ['as'=>'progressBar' , 'uses'=>'ProgressBarController@progressBar']);
 /*Enable Matlab */
 Route::put('enable' , ['as'=>'enableMatlab' , 'uses'=>'EnableMatlabController@enableMatlabForUpdate']);
 /*Algorithms routes for theory*/
