@@ -37,6 +37,12 @@
                                     @endforeach
                                 </select>
                             </div>
+                            <!----------------------------- information about datasets--------------------------------->
+                            <div class="col-md-4">
+                                <a href="{{route('dataset.index')}}" class="btn btn-primary"><span
+                                            class="glyphicon glyphicon-arrow-right"></span> Διαβάστε περισσότερα</a>
+                            </div>
+                            <!----------------------------------------------------------------------------------------->
                         </div>
                         <div class="form-group">
                             <label class="col-xs-4 control-label">*Επιλέξτε από πια στήλη Εως πιά στήλη θέλετε για
@@ -58,24 +64,10 @@
                             </div>
                             <div class="container">
                                 <!-- Trigger the modal with a button -->
-                                <button type="button" class="btn btn-info btn-sm" data-toggle="modal" data-target="#myModal"><span class="glyphicon glyphicon-info-sign"></span></button>
+                                <button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#myModal"><span class="glyphicon glyphicon-info-sign"></span></button>
 
-                                    <!-- Modal -->
-                                <div class="modal fade" id="myModal" role="dialog">
-                                    <div class="modal-dialog modal-lg">
-                                        <div class="modal-content">
-                                            <div class="modal-header">
-                                                <button type="button" class="close" data-dismiss="modal">&times;</button>
-                                            </div>
-                                            <div class="modal-body">
-                                               @include('pages.index.datasetTable')
-                                            </div>
-                                            <div class="modal-footer">
-                                                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
+                                @include('pages.index.modal')
+
                             </div>
                         </div>
                         <div class="form-group">
@@ -121,21 +113,14 @@
                     </form>
                 </div>
             </div>
-            <!------------------------------------------------------------------------------------------>
+            <!-----------------------------information about choices--------------------------------------------------->
             <div class="col md-3">
                 <div class="col-xs-4 ">
                     @include('pages.index.datasetTable')
                 </div>
             </div>
-            <div class="col-md-3"><br></div>
-            <div class="col-md-6">
-                <hr>
-                <a href="{{route('dataset.index')}}" class="btn btn-default"><span
-                            class="glyphicon glyphicon-arrow-right"></span> Διαβάστε περισσότερα για
-                    τους διαθέσιμους πίνακες (Dataset)</a>
-            </div>
         </div>
-        <!------------------------------------------------------------------------------------------>
+        <!------------------------------------------------------------------------------------------------------------->
     </div>
 @endsection
 @section('scripts')

@@ -21,6 +21,7 @@
             <ul class="nav navbar-nav">
                 <li><a href="{{route('index')}}">Αρχική</a></li>
                 <li><a href="{{route('theory.index')}}">Θεωρία</a></li>
+                <li><a href="{{route('dataset.index')}}">Διαθέσιμα Datasets</a></li>
             </ul>
 
             <!-- Right Side Of Navbar -->
