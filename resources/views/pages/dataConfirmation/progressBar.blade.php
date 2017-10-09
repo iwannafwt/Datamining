@@ -28,13 +28,14 @@
 @endsection
 <script>
     function Redirect() {
-        window.location = "http://localhost:8000/result";
+//        window.location = "http://localhost:8000/result";
+        window.location.href = "{{URL::to('count',($count))}}"
     }
     setTimeout(Redirect, 30000);
     var time = 30;
     /* how long the timer runs for */
     var initialOffset = '440';
-    var i = 1
+    var i = 1;
     var interval = setInterval(function () {
         $('.circle_animation').css('stroke-dashoffset', initialOffset - (i * (initialOffset / time)));
         $('h2').text(i);
