@@ -14,7 +14,7 @@
 Route::get('/','GetWelcomePageController@getHomepage');
 Route::get('index',['as'=>'index','uses'=>'GetIndexController@getIndex']);
 /*Forms routes*/
-Route::put('index' , ['as'=>'setdata' , 'uses'=>'DataForProcessingController@setData']);
+Route::put('setdata' , ['as'=>'setdata' , 'uses'=>'DataForProcessingController@setData']);
 /*contact routes*/
 //Route::get('confirm' , ['as'=>'dataConfirmation' , 'uses'=>'getDataConfirmation@getDataConfirmation']);
 Route::get('about' , ['as'=>'about' , 'uses'=>'PagesController@getAbout']);

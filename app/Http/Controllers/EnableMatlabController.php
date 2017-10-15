@@ -21,23 +21,23 @@ class EnableMatlabController extends Controller
 
     public function enableMatlabForUpdate(Request $request)
     {
-        $checkalg = $request->algorithm;
+        $checkalg = $request->algorithm2;
         if ($checkalg == 2){  //TODO statikos tropos gia na pernw to KNN . na allaksei
             Artisan::call('Enable:Knn', array(
-                    'dataset' => $request->dataset,
+                    'dataset' => $request->dataset2,
                     'from'=> $request->from,
                     'to'=> $request->to,
-                    'algorithm' => $request->algorithm,
-                    'k' => $request->k,
+                    'algorithm' => $request->algorithm2,
+                    'k' => $request->k2,
                     'trainingset' => $request->trainingset,
                     'userId' => $request->userId)
             );
         }else{
             Artisan::call('Enable:Bayes', array(
-                    'dataset' => $request->dataset,
+                    'dataset' => $request->dataset2,
                     'from'=> $request->from,
                     'to'=> $request->to,
-                    'algorithm' => $request->algorithm,
+                    'algorithm' => $request->algorithm2,
                     'trainingset' => $request->trainingset,
                      'userId' => $request->userId)
             );
