@@ -1,13 +1,16 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <title>Kαλώς ήρθατε</title>
+    <link rel="welcome icon" href="{{URL::asset('/Logo/title.png')}} " />
     @include('partials._head')
 </head>
 <body>
 
 <h1>
     <a href="" class="typewrite" data-period="2000"
-       data-type='[ "This is a graduation project ", "For Technological Educational Institute of Serres"]'>
+       data-type='[ "Kαλώς ήρθατε στην εφαρμογή Μillion ",
+                "Πρόκειται για μια πτυχιακή εργασία του ΤΕΙ Κεντρικής Μακεδονίας"]'>
         <span class="wrap"></span>
     </a>
 </h1>

@@ -1,5 +1,5 @@
 @extends('layouts.app')
-
+@section('title','Σύνδεση')
 @section('content')
 <div class="container">
     <div class="row">
@@ -40,11 +40,11 @@
 
                         <div class="form-group">
                             <div class="col-md-6 col-md-offset-4">
-                                <div class="checkbox">
-                                    <label>
-                                        <input type="checkbox" name="remember"> Θυμήσου με
-                                    </label>
-                                </div>
+                                {{--<div class="checkbox">--}}
+                                    {{--<label>--}}
+                                        {{--<input type="checkbox" name="remember"> Θυμήσου με--}}
+                                    {{--</label>--}}
+                                {{--</div>--}}
                             </div>
                         </div>
 
