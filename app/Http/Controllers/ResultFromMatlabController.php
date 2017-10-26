@@ -82,7 +82,7 @@ class ResultFromMatlabController extends Controller
         }
 
         Lava::ScatterChart('C2', $datatable, [
-            'width' => 500, /*to megethos tou diagrammatos*/
+            'width' => 1200, /*to megethos tou diagrammatos*/
             'legend' => [
                 'position' => 'none'
             ],
@@ -103,7 +103,7 @@ class ResultFromMatlabController extends Controller
         }
 
         Lava::ScatterChart('IDX', $datatableIDX, [
-            'width' => 500, /*to megethos tou diagrammatos*/
+            'width' => 1200, /*to megethos tou diagrammatos*/
             'legend' => [
                 'position' => 'none'
             ],
