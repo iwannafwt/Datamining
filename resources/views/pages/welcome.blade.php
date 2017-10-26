@@ -9,7 +9,7 @@
 
 <h1>
     <a href="" class="typewrite" data-period="2000"
-       data-type='[ "Kαλώς ήρθατε στην εφαρμογή Μillion ",
+       data-type='[ "Kαλώς ήρθατε στην εφαρμογή Μilion ",
                 "Πρόκειται για μια πτυχιακή εργασία του ΤΕΙ Κεντρικής Μακεδονίας"]'>
         <span class="wrap"></span>
     </a>
