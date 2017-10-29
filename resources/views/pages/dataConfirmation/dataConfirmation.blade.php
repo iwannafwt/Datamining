@@ -42,7 +42,7 @@
                         {!! Form::close() !!}
                     </td>
                     <td>
-                        {!! Form::open(['route'=>['enableMatlab'] , 'method'=>'PUT']) !!}
+                        {!! Form::open(['route'=>['enableMatlab'] , 'method'=>'POST']) !!}
                         {{ Form::hidden('dataset2', $dataset->id) }}
                         {{ Form::hidden('from',$from ) }}
                         {{ Form::hidden('to', $to) }}

@@ -24,7 +24,7 @@ Route::get('cvm' , ['as'=>'cvm' , 'uses'=>'PagesController@getCvm']);
 Route::get('progressBar/{count}' , ['as'=>'progressBar' , 'uses'=>'ProgressBarController@progressBar']);
 Route::get('count/{count}','ProgressBarController@count');
 /*Enable Matlab */
-Route::put('enable' , ['as'=>'enableMatlab' , 'uses'=>'EnableMatlabController@enableMatlabForUpdate']);
+Route::post('enable' , ['as'=>'enableMatlab' , 'uses'=>'EnableMatlabController@enableMatlabForUpdate']);
 /*Algorithms routes for theory*/
 Route::resource('theory','TheoryController');
 Route::resource('dataset','DatasetController');
