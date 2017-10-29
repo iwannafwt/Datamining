@@ -14,14 +14,15 @@
 Route::get('/','GetWelcomePageController@getHomepage');
 Route::get('index',['as'=>'index','uses'=>'GetIndexController@getIndex']);
 /*Forms routes*/
-Route::put('index' , ['as'=>'setdata' , 'uses'=>'DataForProcessingController@setData']);
+Route::put('setdata' , ['as'=>'setdata' , 'uses'=>'DataForProcessingController@setData']);
 /*contact routes*/
 //Route::get('confirm' , ['as'=>'dataConfirmation' , 'uses'=>'getDataConfirmation@getDataConfirmation']);
 Route::get('about' , ['as'=>'about' , 'uses'=>'PagesController@getAbout']);
 Route::get('contact' , ['as'=>'contact' , 'uses'=>'PagesController@getContact']);
 Route::get('cvi' , ['as'=>'cvi' , 'uses'=>'PagesController@getCvi']);
 Route::get('cvm' , ['as'=>'cvm' , 'uses'=>'PagesController@getCvm']);
-Route::get('progressBar' , ['as'=>'progressBar' , 'uses'=>'ProgressBarController@progressBar']);
+Route::get('progressBar/{count}' , ['as'=>'progressBar' , 'uses'=>'ProgressBarController@progressBar']);
+Route::get('count/{count}','ProgressBarController@count');
 /*Enable Matlab */
 Route::put('enable' , ['as'=>'enableMatlab' , 'uses'=>'EnableMatlabController@enableMatlabForUpdate']);
 /*Algorithms routes for theory*/

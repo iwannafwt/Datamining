@@ -14,7 +14,7 @@ class CreateTrainingsetChoicesTable extends Migration
     {
         Schema::create('trainingset_choices', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('value');
+            $table->integer('value');
             $table->string('name');
         });
     }

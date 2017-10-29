@@ -24,9 +24,7 @@ class ResultFromMatlabController extends Controller
      */
     public function index()
     {
-        \Session::flash('time' , 'Τα αποτελέσματα από την επεξεργασία δεδομένων των αλγορίθμων αργούν . 
-                                Παρακαλώ κάντε ανανέωση της σελίδας για να εμφανιστούν τα αποτελέσματα. ');
-        $result = ResultFromMatlab::where('UserId', Auth::user()->id)->get();
+        $result = ResultFromMatlab::where('UserId', Auth::user()->id) ->orderBy('created_at', 'desc')->get();
         $algorithm = AlgorithmChoice::all();
         $dataset = DatasetChoice::all();
 
@@ -84,7 +82,7 @@ class ResultFromMatlabController extends Controller
         }
 
         Lava::ScatterChart('C2', $datatable, [
-            'width' => 500, /*to megethos tou diagrammatos*/
+            'width' => 1200, /*to megethos tou diagrammatos*/
             'legend' => [
                 'position' => 'none'
             ],
@@ -93,7 +91,8 @@ class ResultFromMatlabController extends Controller
             ],
             'vAxis' => [
                 'title' => ''
-            ]
+            ],
+            'colors' => ['red']
         ]);
         $datatableIDX = Lava::DataTable();
         $datatableIDX->addNumberColumn('IDX');
@@ -104,7 +103,7 @@ class ResultFromMatlabController extends Controller
         }
 
         Lava::ScatterChart('IDX', $datatableIDX, [
-            'width' => 500, /*to megethos tou diagrammatos*/
+            'width' => 1200, /*to megethos tou diagrammatos*/
             'legend' => [
                 'position' => 'none'
             ],

@@ -37,20 +37,20 @@
                 </tr>
                 <tr>
                     <td>
-                        {!! Form::open(['route'=>['index'] , 'method'=>'PUT']) !!}
+                        {!! Form::open(['route'=>['index'] , 'method'=>'GET']) !!}
                         {!! Form::submit('Επιστροφή πίσω' , ['class' => 'btn btn-primary btn-block']) !!}
                         {!! Form::close() !!}
                     </td>
                     <td>
                         {!! Form::open(['route'=>['enableMatlab'] , 'method'=>'PUT']) !!}
-                        {{ Form::hidden('dataset', $dataset->id) }}
+                        {{ Form::hidden('dataset2', $dataset->id) }}
                         {{ Form::hidden('from',$from ) }}
                         {{ Form::hidden('to', $to) }}
-                        {{ Form::hidden('algorithm', $algorithm->id) }}
+                        {{ Form::hidden('algorithm2', $algorithm->id) }}
                         @if($k == null)
-                            {{ Form::hidden('k', $k )}}
+                            {{ Form::hidden('k1', $k )}}
                         @else
-                            {{ Form::hidden('k', $k->id) }}
+                            {{ Form::hidden('k2', $k->name) }}
                         @endif
                         {{ Form::hidden('trainingset', $trainingSet->value) }}
                         {{ Form::hidden('userId',   $userId)  }}

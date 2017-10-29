@@ -1,4 +1,5 @@
 <title>@yield('title')</title>
+<link rel="welcome icon" href="{{URL::asset('/Logo/title.png')}} " />
 
 <link href="https://fonts.googleapis.com/css?family=Ubuntu" type="text/css">
 <!-- Fonts -->

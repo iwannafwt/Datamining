@@ -1,7 +1,7 @@
 <footer class="footer">
     <div class="container">
 
-        <div class="row"> <br><br></div>
+        <div class="row"> <br><br><br><br><br><br><br><br><br><br><br><br><br><br></div>
         <p class="text-center text-muted">Copyright Milion - All Rights Reserved</p>
     </div>
 </footer>

@@ -14,7 +14,7 @@ class CreateKChoicesTable extends Migration
     {
         Schema::create('k_choices', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('value');
+            $table->integer('value');
             $table->string('name');
         });
     }
