@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\AlgorithmChoice;
 use App\ResultFromMatlab;
 use Illuminate\Http\Request;
 
@@ -21,8 +22,8 @@ class EnableMatlabController extends Controller
 
     public function enableMatlabForUpdate(Request $request)
     {
-        $checkalg = $request->algorithm2;
-        if ($checkalg == 2){  //TODO statikos tropos gia na pernw to KNN . na allaksei
+        $nameofalg = AlgorithmChoice::where(['id' => $request->algorithm2])->first();
+        if ($nameofalg->value == 'knn'){
             Artisan::call('Enable:Knn', array(
                     'dataset' => $request->dataset2,
                     'from'=> $request->from,
