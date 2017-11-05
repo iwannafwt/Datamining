@@ -46,7 +46,7 @@
                         </div>
                         <div class="form-group">
                             <label class="col-xs-4 control-label">*Επιλέξτε από πια στήλη Εως πιά στήλη θέλετε για
-                                έλενχο
+                                έλεγχο
                                 (Test set):</label>
                             <div class="col-xs-1 ">
                                 <p>Από</p>

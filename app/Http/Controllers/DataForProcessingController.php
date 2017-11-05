@@ -32,7 +32,7 @@ class DataForProcessingController extends Controller
 
         if (($request->from < $databeseValues->columnsStart)) {
             \Session::flash('key', 'Έχετε επιλέξει τον πίνακα ' . $databeseValues->value .
-                '. Η πρώτη στήλη που μπορείτε να επιλέξετε είναι η στήλη' . $databeseValues->columnsStart);
+                '. Η πρώτη στήλη που μπορείτε να επιλέξετε είναι η στήλη ' . $databeseValues->columnsStart);
             return redirect()->route('index');
         }
         /*-------------------------------------------------------------------------------------------------------------*/
