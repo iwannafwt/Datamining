@@ -42,6 +42,11 @@ class DataForProcessingController extends Controller
             return redirect()->route('index');
         }
         /*-------------------------------------------------------------------------------------------------------------*/
+        if (($request->from > $request->to)) {
+            \Session::flash('key', 'Η πρώτη στήλη δεν μπορεί να είναι μεγαλύτερη της δεύτερης.');
+            return redirect()->route('index');
+        }
+        /*-------------------------------------------------------------------------------------------------------------*/
         $k = KChoice::where(['id' => $request->k])->first();
         $dataset = DatasetChoice::where(['id' => $request->dataset])->first();
         $algorithm = AlgorithmChoice::where(['id' => $request->algorithm])->first();
