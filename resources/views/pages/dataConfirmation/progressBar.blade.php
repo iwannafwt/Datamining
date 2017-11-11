@@ -31,8 +31,8 @@
 //        window.location = "http://localhost:8000/result";
         window.location.href = "{{URL::to('count',($count))}}"
     }
-    setTimeout(Redirect, 20000);
-    var time = 20;
+    setTimeout(Redirect, 30000);
+    var time = 30;
     /* how long the timer runs for */
     var initialOffset = '440';
     var i = 1;
