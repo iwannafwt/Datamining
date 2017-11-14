@@ -54,8 +54,8 @@
                     <table class="table table-bordered">
                         <thead>
                         <tr>
-                            <th width="14.28%">Accuracy(acu)</th>
-                            <th width="14.28%">Error rate(era)</th>
+                            <th width="14.28%" title="Ακρίβεια">Accuracy(acu)</th>
+                            <th width="14.28%" title="Ρυθµός σϕάλµατος">Error rate(era)</th>
                             <th width="14.28%">True positive(TP)</th>
                             <th width="14.28%">False positive(FP)</th>
                             <th width="14.28%">False negative(FN)</th>
@@ -64,8 +64,8 @@
                         </thead>
                         <tbody>
                         <tr>
-                            <td>{{str_limit($result->acu,$limit=7)}}</td>
-                            <td>{{str_limit($result->era,$limit=7)}}</td>
+                            <td title="ACCURACY=TP+TN/TP+TN+FP+FN">{{str_limit($result->acu,$limit=7)}}</td>
+                            <td title="ERROR RATE=FP+FN/TP+TN+FP+FN">{{str_limit($result->era,$limit=7)}}</td>
                             <td>{{str_limit($result->TP,$limit=7)}}</td>
                             <td>{{str_limit($result->FP,$limit=7)}}</td>
                             <td>{{str_limit($result->FN,$limit=7)}}</td>
@@ -82,22 +82,22 @@
                 <table class="table table-bordered">
                     <thead>
                     <tr>
-                        <th width="14.28%">Sensitivity(sen)</th>
-                        <th width="14.28%">Specificity(spe)</th>
-                        <th width="14.28%">False positive rate(fpr)</th>
-                        <th width="14.28%">False negative rate(fnr)</th>
-                        <th width="14.28%">Precision(pre)</th>
-                        <th width="14.28%">Negative predictive valu(npv)</th>
+                        <th width="14.28%" title="Eυαισθησία">Sensitivity(sen)</th>
+                        <th width="14.28%" title="">Specificity(spe)</th>
+                        <th width="14.28%" title="">False positive rate(fpr)</th>
+                        <th width="14.28%" title="">False negative rate(fnr)</th>
+                        <th width="14.28%" title="">Precision(pre)</th>
+                        <th width="14.28%" title="">Negative predictive valu(npv)</th>
                     </tr>
                     </thead>
                     <tbody>
                     <tr>
-                        <td>{{str_limit($result->sen ,$limit=9)}}</td>
-                        <td>{{str_limit($result->spe,$limit=9)}}</td>
-                        <td>{{str_limit($result->fpr,$limit=9)}}</td>
-                        <td>{{str_limit($result->fnr,$limit=9)}}</td>
-                        <td>{{str_limit($result->pre,$limit=9)}}</td>
-                        <td>{{str_limit($result->npv,$limit=9)}}</td>
+                        <td title="SENSITIVITY=TP/TP+FN">{{str_limit($result->sen ,$limit=9)}}</td>
+                        <td title="SPECIFICITY=TN/TN+FP">{{str_limit($result->spe,$limit=9)}}</td>
+                        <td title="FPR=1-SPECIFICITY=TN/TN+FP">{{str_limit($result->fpr,$limit=9)}}</td>
+                        <td title="FALSE NEGATIVE RATE=FN/TP+FN">{{str_limit($result->fnr,$limit=9)}}</td>
+                        <td title="PRECISION=TP/TP+FP=">{{str_limit($result->pre,$limit=9)}}</td>
+                        <td title="NEGATIVE PREDICTIVE VALUE=TN/TN+FN">{{str_limit($result->npv,$limit=9)}}</td>
                     </tr>
                     </tbody>
                 </table>
