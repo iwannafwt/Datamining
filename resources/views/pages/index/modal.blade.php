@@ -13,8 +13,8 @@
                     <thead>
                     <tr>
                         <th width="50%">Όνομα πίνακα</th>
-                        <th width="25%">Από πιά στήλη</th>
-                        <th width="25%">Εως πιά στήλη</th>
+                        <th width="25%">Από στήλη</th>
+                        <th width="25%">Εως στήλη</th>
                     </tr>
                     </thead>
                 </table>

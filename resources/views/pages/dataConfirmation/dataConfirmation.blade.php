@@ -3,7 +3,7 @@
 @section('content')
     <div class="box">
         <div class="info">
-            <h4 class="text-center">Οι επιλογές που έχετε κάνει</h4>
+            <h4 class="text-center">ΟΙ ΕΠΙΛΟΓΕΣ ΠΟΥ ΕΧΕΤΕ ΚΑΝΕΙ</h4>
             <table class="table">
                 <tbody>
                 <tr>

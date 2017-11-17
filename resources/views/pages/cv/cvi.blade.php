@@ -92,17 +92,17 @@
 @section('degree')
     <tr>
         <td>1ο Γυμνάσιο Σερρών</td>
-        <td>2014</td>
-        <td> 3.50</td>
+        <td>2009</td>
+        <td> 16</td>
     </tr>
     <tr>
         <td>1ο ΕΠΑΛ Σερρών</td>
-        <td>2011</td>
-        <td> 3.25</td>
+        <td>2012</td>
+        <td> 19.3</td>
     </tr>
     <tr>
         <td>Τει Κεντρικής Μακεδονίας</td>
-        <td>2014</td>
-        <td> 3.50</td>
+        <td>1017</td>
+        <td> 6.50</td>
     </tr>
 @endsection
